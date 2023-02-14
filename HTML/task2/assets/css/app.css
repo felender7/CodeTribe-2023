@@ -13,7 +13,7 @@ a:hover {
     color: #043d32;
 }
 
-nav {
+nav .navbar {
     background-color: whitesmoke;
     justify-content: space-around;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -145,5 +145,12 @@ footer ul {
     to {
         visibility: hidden;
     }
+}
+
+.skills-image .col{
+    margin-right: 3px;
+}
+.skills-image img{
+    object-fit: cover;
 }
 
