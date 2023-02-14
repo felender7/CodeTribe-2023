@@ -23,11 +23,6 @@ img {
     object-fit: cover;
 }
 
-div {
-    padding-left: 7rem;
-    padding-right: 7rem;
-}
-
 p {
     text-align: justify;
     line-height: 25px;
@@ -148,9 +143,12 @@ footer ul {
 }
 
 .skills-image .col{
-    margin-right: 3px;
+    margin-right: 5px;
+    
 }
 .skills-image img{
+    text-align: center;
     object-fit: cover;
+    
 }
 
