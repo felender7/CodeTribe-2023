@@ -1,8 +1,23 @@
-# Assessment 1
+# Assessment 2
 ### Topic - Portfolio Website
 
-*  Create your own portfolio website using HTML by carefully imitating the design snippet above.
-*  Design the following pages and carefully integrate them into your HTML project as shown on
-*  In the end, you must have Home, About me, and the Contact us pages on your project.
-the below design snippet. The pages must have content.
+A  After successfully completing your “home”, “contact” and “about” pages:
+* Use CSS to style your website according to the above design snippet.
+* Add your own creativity to make the website more appealing to the eye and to the user.
+* Make good use of table tags for aligning your website properly.
+* Replace the big image on the home page with a video that best describes you
 
+B The “about me” page must contain:
+* Your personal information.
+* Your educational background.
+* Projects you have done in the past.
+* Working experience(if any).
+* Any other information employers may be interested in
+
+C The “contact us” page must contain:
+* The city and province you currently reside in.
+* “Contact Us“ form must include the following elements:
+    i. “Name and Surname” HTML input.
+    ii. “Email Address” HTML input.
+    iii. “Message” HTML textarea.
+    iv. “Submit” HTML button/submit input.
