@@ -1,6 +1,6 @@
+/*custome css*/
 body {
     background-color: #ecf0f1;
-
 }
 
 a {
@@ -13,18 +13,114 @@ a:hover {
     color: #043d32;
 }
 
+img {
+    object-fit: cover;
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+    margin-bottom: 100px;
+}
+
+.text-green {
+    color: #16a085;
+}
+
+.text-card {
+    align-items: flex-end;
+}
+
+.bg-green {
+    background-color: #16a085;
+}
+
+.bg-white {
+    background-color: whitesmoke;
+}
+
+.icons {
+    color: whitesmoke;
+}
+
+.small-box {
+    font-size: larger;
+    color: #16a085;
+}
+
+.git-icon {
+    color: #6e5494;
+    font-size: 20px;
+}
+
+.stack-overflow-icon {
+    color: #f48024;
+    font-size: 20px;
+}
+
+.slack-icon {
+    color: #3eb991;
+    font-size: 20px;
+}
+
+.linked-in-icon {
+    color: #00a0dc;
+    font-size: 20px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #16a085;
+    border-color: #16a085;
+}
+
+.skills {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.skills p {
+    margin-top: 20px;
+    font-weight: bold;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+/*custome css end */
+
+
+/*navbar*/
 nav .navbar {
     background-color: whitesmoke;
     justify-content: space-around;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-img {
-    object-fit: cover;
-}
-
-
-
+/*Hero*/
 .hero {
     position: relative;
     width: 100%;
@@ -42,7 +138,6 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -70,35 +165,8 @@ img {
     margin-top: 1rem;
 }
 
-ul {
-    list-style: none;
-}
 
-
-
-main {
-    margin-bottom: 100px;
-}
-
-.text-green {
-    color: #16a085;
-    ;
-}
-
-.text-card {
-
-    align-items: flex-end;
-}
-
-
-.bg-green {
-    background-color: #16a085;
-    ;
-}
-.bg-white{
-    background-color: whitesmoke;
-}
-
+/*footer*/
 footer {
     background-color: #16a085;
     padding-left: 7rem;
@@ -111,70 +179,4 @@ footer ul {
     padding: 0;
     margin: 0;
     text-align: start;
-}
-
-.icons {
-    color: whitesmoke;
-}
-
-.small-box {
-    font-size: larger;
-    color: #16a085;
-}
-
-.btn-success {
-    color: #fff;
-    background-color: #16a085;
-    border-color: #16a085;
-}
-
-.blink {
-    animation: blink-animation 1s steps(5, start) infinite;
-    -webkit-animation: blink-animation 1s steps(5, start) infinite;
-}
-
-@keyframes blink-animation {
-    to {
-        visibility: hidden;
-    }
-}
-
-@-webkit-keyframes blink-animation {
-    to {
-        visibility: hidden;
-    }
-}
-
-
-.skills {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 5px;
-}
-.skills p{
-    margin-top: 20px;
-    font-weight: bold;
-    color: whitesmoke;
-    text-transform: uppercase;
-}
-
-.git-icon{
-    color: #6e5494;
-    font-size: 20px;
-}
-.stack-overflow-icon{
-    color: #f48024;
-    font-size: 20px;
-}
-
-.slack-icon{
-    color: #3eb991;
-    font-size: 20px;
-}
-.linked-in-icon{
-    color: #00a0dc;
-    font-size: 20px;
 }
