@@ -16,8 +16,8 @@ B The “about me” page must contain:
 
 C The “contact us” page must contain:
 * The city and province you currently reside in.
-* “Contact Us“ form must include the following elements:
-    i. “Name and Surname” HTML input.
-    ii. “Email Address” HTML input.
-    iii. “Message” HTML textarea.
-    iv. “Submit” HTML button/submit input.
+* Contact Us form must include the following elements:
+    i.Name and Surname” HTML input.
+    ii.Email Address” HTML input.
+    iii.Message” HTML textarea.
+    iv.Submit” HTML button/submit input.
