@@ -160,3 +160,21 @@ footer ul {
     color: whitesmoke;
     text-transform: uppercase;
 }
+
+.git-icon{
+    color: #6e5494;
+    font-size: 20px;
+}
+.stack-overflow-icon{
+    color: #f48024;
+    font-size: 20px;
+}
+
+.slack-icon{
+    color: #3eb991;
+    font-size: 20px;
+}
+.linked-in-icon{
+    color: #00a0dc;
+    font-size: 20px;
+}
