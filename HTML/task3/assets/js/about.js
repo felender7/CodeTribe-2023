@@ -40,8 +40,8 @@ window.onload = function () {
     document.getElementById("qualificationList").innerHTML = listUl;
 
 
-    //SKILLS SECTION - ABOUT PAGE
-    //Skills and Tools
+    //SKILLS and TOOLS SECTION - ABOUT PAGE
+    //Skills 
 
     let SkillsList = new Array(
 
@@ -68,12 +68,6 @@ window.onload = function () {
             img: "assets/img/icons/firebase.png",
             skillsName : "firebase"
         },
-
-        
-    
-    
-    
-    
     
     )
 
@@ -87,5 +81,46 @@ window.onload = function () {
       
     listSkillsUl +="";
     document.getElementById("skills").innerHTML = listSkillsUl;
+
+   //Tools 
+
+   let ToolsList = new Array(
+
+    {
+        img: "assets/img/icons/git.png",
+        skillsName : "git"
+    },
+    {
+        img: "assets/img/icons/command.png",
+        skillsName : "cmd"
+    },
+
+    {
+        img: "assets/img/icons/npm.png",
+        skillsName : "npm"
+    },
+
+    {
+        img: "assets/img/icons/adobe-xd.png",
+        skillsName : "Adobe-xd"
+
+    },
+    {
+        img: "assets/img/icons/slack.png",
+        skillsName : "slack"
+    },
+
+)
+
+    let listToolsUl = ""
+
+    for(t = 0;t < ToolsList.length; t++)
+    {
+        listToolsUl += "<div class='bg-secondary rounded shadow-sm p-2 skills'><img src='" + ToolsList[t].img + "' class='img-fluid'/>" + "<p>" + ToolsList[t].skillsName + "</p> </div>" 
+    }
+    
+    
+    listToolsUl +="";
+    document.getElementById("tools").innerHTML = listToolsUl;
 
 }
