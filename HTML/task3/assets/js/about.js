@@ -123,4 +123,14 @@ window.onload = function () {
     listToolsUl +="";
     document.getElementById("tools").innerHTML = listToolsUl;
 
+
+    //PROJECTS SECTION - ABOUT PAGE
+    //Project
+     
+    let projectName ="<i class='fa-solid fa-folder'></i> Work Local";
+    let discription = "work local provides a more efficient and effective way of creating a platform where Job Seekers can upload their CV's and Qualifications...";
+    
+    document.getElementById("project-title").innerHTML = projectName;
+    document.getElementById("project-description").innerHTML = discription;
+   
 }
