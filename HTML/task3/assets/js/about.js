@@ -169,7 +169,20 @@ window.onload = function () {
     document.getElementById("exprience-subtitle").innerHTML = exprienceSubTitle;
     document.getElementById("exprience-description").innerHTML = exprienceDescription;
     document.getElementById("years-of-exprience").innerHTML = '<i class="fa-solid fa-certificate"></i> 3+ Years of Experience';
-    document.getElementById("completed-projects").innerHTML = '<i class="fa-solid fa-folder"></i> 70+ Completed Projects'
+    document.getElementById("completed-projects").innerHTML = '<i class="fa-solid fa-folder"></i> 70+ Completed Projects';
+
+    //MY WORK SECTION - ABOUT PAGE 
+    //My work
+
+    let workTitle = "My Work";
+    let workSubtitle ="See My Works Which Will Amaze You!" ;
+    let workDescription = "I develop the best quality website that serves for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients."
+
+    document.getElementById("work-title").innerHTML = workTitle;
+    document.getElementById("work-subtitle").innerHTML = workSubtitle;
+    document.getElementById("work-description").innerHTML = workDescription;
 }
+
+
 
 
