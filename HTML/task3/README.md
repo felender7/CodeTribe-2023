@@ -1,23 +1,17 @@
-# Assessment 2
-### Topic - Portfolio Website
+# Assessment 3
+### Topic - Portfolio Website | Javascript
 
-A  After successfully completing your “home”, “contact” and “about” pages:
-* Use CSS to style your website according to the above design snippet.
+A  After successfully completing your “home”, “contact” and “about” pages and integrating your
+styling to your web pages:
+* Define all your personal information in javascript variables i.e. your name, surname,
+bio, projects educational background, contact information, etc.
 * Add your own creativity to make the website more appealing to the eye and to the user.
-* Make good use of table tags for aligning your website properly.
-* Replace the big image on the home page with a video that best describes you
+* Define and include all the projects you have listed on your CV(if any) inside an
+array(or a list).
 
-B The “about me” page must contain:
-* Your personal information.
-* Your educational background.
-* Projects you have done in the past.
-* Working experience(if any).
-* Any other information employers may be interested in
 
-C The “contact us” page must contain:
-* The city and province you currently reside in.
-* Contact Us form must include the following elements:
-    * Name and Surname” HTML input.
-    ii.Email Address” HTML input.
-    iii.Message” HTML textarea.
-    iv.Submit” HTML button/submit input.
+B Render and display all the data from your javascript variables into your web page in html. No
+data must be hard coded in html but all data must be rendered from javascript.
+
+C Use Formspree Api to render your contact us form.
+
