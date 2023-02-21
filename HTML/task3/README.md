@@ -1,7 +1,7 @@
 # Assessment 3
 ### Topic - Portfolio Website | Javascript
 
-A  After successfully completing your “home”, “contact” and “about” pages and integrating your
+A.  After successfully completing your “home”, “contact” and “about” pages and integrating your
 styling to your web pages:
 * Define all your personal information in javascript variables i.e. your name, surname,
 bio, projects educational background, contact information, etc.
@@ -10,8 +10,8 @@ bio, projects educational background, contact information, etc.
 array(or a list).
 
 
-B Render and display all the data from your javascript variables into your web page in html. No
+B. Render and display all the data from your javascript variables into your web page in html. No
 data must be hard coded in html but all data must be rendered from javascript.
 
-C Use Formspree Api to render your contact us form.
+C. Use Formspree Api to render your contact us form.
 

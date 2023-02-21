@@ -1,5 +1,5 @@
 # Assessment 2
-### Topic - Portfolio Website
+### Topic - Portfolio Website | Introduction to CSS
 
 A  After successfully completing your “home”, “contact” and “about” pages:
 * Use CSS to style your website according to the above design snippet.
@@ -18,6 +18,6 @@ C The “contact us” page must contain:
 * The city and province you currently reside in.
 * Contact Us form must include the following elements:
     * Name and Surname” HTML input.
-    ii.Email Address” HTML input.
-    iii.Message” HTML textarea.
-    iv.Submit” HTML button/submit input.
+    * Email Address” HTML input.
+    * Message” HTML textarea.
+    * Submit” HTML button/submit input.
