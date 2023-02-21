@@ -143,11 +143,33 @@ window.onload = function () {
 
     //PROJECTS SECTION - ABOUT PAGE
     //Project
-     
     let projectName ="<i class='fa-solid fa-folder'></i> Work Local";
     let discription = "work local provides a more efficient and effective way of creating a platform where Job Seekers can upload their CV's and Qualifications...";
     
     document.getElementById("project-title").innerHTML = projectName;
     document.getElementById("project-description").innerHTML = discription;
    
+    //SKILLS SECTION - ABOUT PAGE 
+    //skills
+    let skillTitle = "My skills";
+    let skillSubtitle = "What My Programming Skills Included?"; 
+    let skillDescription = "I develop simple, intuitive and responsive user interface that helps users get things done with less effort and time with those technologies."
+
+    document.getElementById("skills-title").innerHTML = skillTitle;
+    document.getElementById("skills-subtitle").innerHTML = skillSubtitle;
+    document.getElementById("skills-description").innerHTML = skillDescription;
+
+    //EXPRIENCE SECTION - ABOUT PAGE 
+    //Exprience
+    let exprienceTitle = "Experience";
+    let exprienceSubTitle = "3+ Years of Experience";
+    let exprienceDescription = "I have been developing sites and apps for 3 years and i know for sure the main trends and directions of modern design, I have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.";
+    
+    document.getElementById("exprience-title").innerHTML = exprienceTitle;
+    document.getElementById("exprience-subtitle").innerHTML = exprienceSubTitle;
+    document.getElementById("exprience-description").innerHTML = exprienceDescription;
+    document.getElementById("years-of-exprience").innerHTML = '<i class="fa-solid fa-certificate"></i> 3+ Years of Experience';
+    document.getElementById("completed-projects").innerHTML = '<i class="fa-solid fa-folder"></i> 70+ Completed Projects'
 }
+
+
