@@ -1,6 +1,23 @@
 
 window.onload = function () {
 
+
+    //CONTENT
+    let fullName = "Tlangelani Hlungwani"
+    let title = "About me";
+    let  subTitle = "Need a Creative Product? I can Help You!";
+    let aboutMe = " Hi! Im " + fullName + ` , and Im a developer who has passion for building clean web applications with
+    intuitive functionality. I enjoy the process of turning ideas into reality using creative
+    solutions. Im always curious about learning new skills, tools, and concepts. In addition to
+    working on various solo full stack projects, I have worked with creative teams, which involves
+    daily stand-ups and communications, source control, and project management.`
+
+
+   document.getElementById("about-title").innerHTML = title;
+   document.getElementById("about-subtitle").innerHTML = subTitle;
+   document.getElementById("about-me").innerHTML = aboutMe;
+ 
+
     //EDUCATION SECTION - ABOUT PAGE
     //Quilifications
     let QuilificationsList = new Array(
@@ -46,7 +63,7 @@ window.onload = function () {
     let SkillsList = new Array(
 
         {
-            img: "/assets/img/icons/html5.png",
+            img: "assets/img/icons/html5.png",
             skillsName : "html"
         },
         {

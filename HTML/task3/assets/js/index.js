@@ -24,7 +24,7 @@ window.onload = function () {
     document.getElementById("bio-fullname").innerHTML = 'Hi, Im ' + bioFullname;
     document.getElementById("bio-subtitle").innerHTML = bioSubTitle;
     document.getElementById("bio-about").innerHTML = boiAbout;
-    document.getElementById("boi-image").src = "/assets/img/illustrations/bio-avator.png";
+    document.getElementById("boi-image").src = "assets/img/illustrations/bio-avator.png";
     document.getElementById("button").innerHTML ="<button onclick='navigateToNextPage()' class='btn btn-success mt-2'>MY PROJECTS</button> " + " <a href='assets/downloads/Tlangelani_Resume.pdf' target='_blank' class='btn btn-secondary mt-2'>DOWNLOAD CV</a> ";
 
 }
