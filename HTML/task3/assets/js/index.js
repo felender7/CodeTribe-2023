@@ -25,46 +25,6 @@ window.onload = function () {
     document.getElementById("bio-subtitle").innerHTML = bioSubTitle;
     document.getElementById("bio-about").innerHTML = boiAbout;
     document.getElementById("boi-image").src = "/assets/img/illustrations/bio-avator.png";
-    document.getElementById("button").innerHTML ="<a href='contacts.html' class='btn btn-success mt-2'>HIRE ME</a> " + " <a href='assets/downloads/Tlangelani_Resume.pdf' target='_blank' class='btn btn-secondary mt-2'>DOWNLOAD CV</a> ";
-
-
-    
-    
-
-
-    //EDUCATION SECTION - ABOUT PAGE
-    //Quilifications
-    let QuilificationsList = new Array(
-        {
-            institution: "MTN Business App Academy",
-            qualification: "APP Development (NQF Level 5)",
-            yearObtained: 2021
-        },
-
-        {
-            institution: "HyperionDevy",
-            qualification: "Software Engineering",
-            yearObtained: 2020
-        },
-
-        {
-            institution: "CTU Training",
-            qualification: "A+ and N+ Certification",
-            yearObtained: 2012
-        },
-
-    );
-    
-    let listUl = "<div>";
-    for(i = 0; i < QuilificationsList.length;i++ ){
-        listUl +=
-        "<table style='width: 100%; margin: 8px; border:1px solid grey; border-radius: 16px;'> <tr><td>Item: " +
-        QuilificationsList[i].institution +
-        "</td></tr> <tr><td>Price: " +
-        QuilificationsList[i].qualification +
-        "</td></tr></table>";
-    }
-    listUl += "</div>";
-  document.getElementById("qualificationList").innerHTML = "<td>" + "hello" + "</td>";
+    document.getElementById("button").innerHTML ="<button onclick='navigateToNextPage()' class='btn btn-success mt-2'>MY PROJECTS</button> " + " <a href='assets/downloads/Tlangelani_Resume.pdf' target='_blank' class='btn btn-secondary mt-2'>DOWNLOAD CV</a> ";
 
 }
