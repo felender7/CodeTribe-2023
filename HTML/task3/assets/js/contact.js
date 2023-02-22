@@ -5,7 +5,7 @@ document.getElementById("mini-banner-image").src = "assets/img/mini_banner.png";
 
 //MAIN CONTENT
 let header = "Contact";
-let bubTitle = "Have You Any Project?Please Drop a Message"
+let bubTitle = "Have You Any Project? Please Drop a Message"
 let description = "Get in touch and let me know how i can help. Fill out the form and Ill be in touch as soon as possible.";
 
 document.getElementById("contact-header").innerHTML = header;
