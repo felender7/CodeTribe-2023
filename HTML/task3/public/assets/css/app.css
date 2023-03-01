@@ -31,6 +31,7 @@ main {margin-bottom: 100px;}
 .slack-icon {color: #3eb991;font-size: 20px;}
 .linked-in-icon {color: #00a0dc;font-size: 20px;}
 th{font-size: 20px; text-transform: uppercase;}
+.fa-2x {font-size: 25px;}
 
 .btn-success {
     color: #fff;
@@ -137,10 +138,14 @@ footer {
     padding-right: 7rem;
     padding-top: 20px;
     padding-bottom: 20px;
+    color: whitesmoke;
 }
 
 footer ul {
     padding: 0;
     margin: 0;
     text-align: start;
+}
+footer a {
+    color: whitesmoke;
 }
