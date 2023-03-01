@@ -1,5 +1,7 @@
 window.onload = function () {
 
+//
+
 //BANNER IMAGE
 document.getElementById("mini-banner-image").src = "assets/img/mini_banner.png";
 
