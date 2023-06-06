@@ -1,7 +1,6 @@
 
 window.onload = function () {
 
-
     //CONTENT
     let fullName = "Tlangelani Hlungwani"
     let title = "About me";
