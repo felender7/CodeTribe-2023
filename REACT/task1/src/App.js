@@ -12,6 +12,7 @@ function App() {
     <div>
          <Navbar/>
          <Cover/>
+         <Features/>
       
         
     </div>
