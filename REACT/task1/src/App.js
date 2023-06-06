@@ -2,6 +2,7 @@
 import Navbar from './components/Navbar';
 import Cover from './components/Cover';
 import Features from './components/Features';
+import CTA from './components/CTA';
 import Download from './components/Download';
 import Footer from './components/Footer';
 
@@ -13,8 +14,10 @@ function App() {
          <Navbar/>
          <Cover/>
          <Features/>
-      
-        
+         <CTA/>
+         <Download/>
+         <Footer/>
+         
     </div>
   );
 }

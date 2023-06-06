@@ -3,6 +3,7 @@ import googlePlayBadge from '../assets/google-play-badge.svg';
 import chartGPTLogo from '../assets/chatgpt-icon.svg';
 import bgPhone from '../assets/bg-phone.png';
 import ai from '../assets/ai.png';
+import CTABg from '../assets/CTA-Bg.png';
 
 
 export {
@@ -10,5 +11,6 @@ export {
     googlePlayBadge,
     chartGPTLogo,
     bgPhone,
-    ai
+    ai,
+    CTABg
 };
