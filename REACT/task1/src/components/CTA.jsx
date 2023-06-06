@@ -1,5 +1,5 @@
 import React from "react";
-import { appStoreBadge, googlePlayBadge } from "./Imports";
+
 function CTA() {
   return (
     <div>
