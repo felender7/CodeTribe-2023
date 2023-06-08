@@ -2,13 +2,16 @@
 
 import LandingPage from './components/LandingPage';
 import EmployeeManagement from './components/EmployeeManagement';
+import Nav from './components/Navigation'
 function App() {
   return (
+   
     <div className='container'>
-      <h2>Employee Management App</h2>
-      <hr></hr>
+       <Nav/>
+       <LandingPage/>
       <EmployeeManagement/>
     </div>
+ 
   );
 }
 

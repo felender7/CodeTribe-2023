@@ -1,7 +1,9 @@
+import { upload } from "@testing-library/user-event/dist/upload";
 import React, { useState } from "react";
 
 function EmployeeManagement() {
   //initialize employee
+
   const [employees, setEmployees] = useState([]);
   const [newEmployee, setNewEmployee] = useState({
     idNumber: "",
@@ -10,17 +12,21 @@ function EmployeeManagement() {
     emailAddress: "",
     phoneNumber: "",
     position: "",
-    image: "",
+    image:""
   });
 
-  // handle input changes
 
+
+
+  // handle input changes
   function InputChange(event) {
     const { name, value } = event.target;
+    
     setNewEmployee((prevEmployee) => ({
       ...prevEmployee,
       [name]: value,
     }));
+  
   }
 
   // add employee
@@ -33,15 +39,21 @@ function EmployeeManagement() {
       emailAddress: "",
       phoneNumber: "",
       position: "",
-      image: "",
+      image:""
+   
     });
     if (newEmployee.idNumber !== "") {
       document.getElementById("status").innerHTML =
         "Employee details saved successfully";
+        <div id="status" className="alert alert-primary"></div>
+
+     
       console.log(newEmployee);
     } else {
       document.getElementById("status").innerHTML =
         "Error saving some fields are missing";
+        <div id="status" className="alert alert-primary"></div>
+       
     }
   }
 
@@ -76,18 +88,17 @@ function EmployeeManagement() {
   return (
     <div>
       <div>
-        <h2>Search Employee</h2>
-        <input
-          type="text"
-          placeholder="ID"
+      <div className="d-flex" role="search" mt-2 >
+        <input className="form-control me-2" type="search employee" placeholder="Search" aria-label="Search"
           onChange={(e) => searchEmployee(e.target.value)}
         />
+         <button className="btn btn-outline-success" type="submit">Search</button>
+        </div>
       </div>
       <hr />
       <div className="row">
-        <span className="alert alert-primary" role="alert">
-          <label id="status"></label>
-        </span>
+        
+      <div id="status"></div>
         <div className="col-md-6">
           <h4>Add Employee</h4>
           <hr />
@@ -161,54 +172,48 @@ function EmployeeManagement() {
             />
           </div>
           <div className="mb-3">
-            <input
+            <input accept="image/*"
               className="form-control"
               type="file"
               name="image"
               placeholder="upload.."
               value={newEmployee.image}
               onChange={InputChange}
+  
               required
             />
           </div>
-
+          
           <button className="btn btn-primary" onClick={AddEmployee}>
             Add
           </button>
-
+          
           <hr />
         </div>
 
-        <div className="col-md-6">
+        <div className="col-md-6 ">
           <h4>Employees</h4>
           <hr />
-          <table className="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
+       
             {employees.map((employee) => (
-              <div key={employee.idNumber}>
-                <tbody>
-                  <tr>
-                    <td>{employee.idNumber}</td>
-                    <td>{employee.firstName}</td>
-                    <td>{employee.lastName}</td>
-                    <td>{employee.emailAddress}</td>
-                  </tr>
-                </tbody>
+              <div key={employee.idNumber} className="bg-light p-3  shadow-sm">
+
+                <span><b>Name:</b> {employee.firstName} {employee.lastName} </span><br />
+                <span><b>Position:</b> {employee.position}</span><br />
+                <span><b>Email Address:</b> {employee.emailAddress} </span><br />
+                <span><b>Phone:</b> {employee.phoneNumber}</span>
+                 <img src={employee.image} alt="" />
+                <hr />
+                
                 <button
                   onClick={() => DeleteEmployee(employee.idNumber)}
-                  className="btn btn-danger btn-sm"
+                  className="btn btn-danger btn-sm p-3"
                 >
                   Delete
                 </button>
+                <span style={{marginRight: "5px"}}></span>
                 <button
-                  className="btn btn-success btn-sm"
+                  className="btn btn-success btn-sm p-3"
                   onClick={() =>
                     UpdateEmployee(employee.idNumber, {
                       ...employee,
@@ -218,9 +223,10 @@ function EmployeeManagement() {
                 >
                   Update
                 </button>
+               
               </div>
             ))}
-          </table>
+           <br /><br />
         </div>
       </div>
     </div>
