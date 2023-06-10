@@ -1,5 +1,6 @@
 
 
+import React from 'react';
 import LandingPage from './components/LandingPage';
 import EmployeeManagement from './components/EmployeeManagement';
 import Nav from './components/Navigation'
