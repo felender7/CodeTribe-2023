@@ -2,7 +2,6 @@ import data from "../data/data.json";
 import React, { useState } from "react";
 function EmployeeManagement() {
 
-
   
   const [employees, setEmployees] = useState(data);
   const [newEmployee, setNewEmployee] = useState({
@@ -27,6 +26,7 @@ function EmployeeManagement() {
 
   // add employee
   function AddEmployee() {
+    
     setEmployees((prevEmployees) => [...prevEmployees, newEmployee]);
     setNewEmployee({
       idNumber: "",
@@ -47,27 +47,6 @@ function EmployeeManagement() {
         "Error saving some fields are missing";
     }
 
-   SaveJson()
-  }
-
-  // save data to Json file
-  function SaveJson() {
-    const jsonData = JSON.stringify(newEmployee);
-
-    fetch('C:/Users/85762776/Desktop/CodeTribe 2023/REACT/task2/employee_management/src/data/data.json', {
-      method: 'PUT', // or 'PUT' if updating an existing file
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: jsonData,
-    })
-      .then(response => response.json())
-      .then(result => {
-        console.log('File successfully written:', result);
-      })
-      .catch(error => {
-        console.error('Error writing file:', error);
-      });
 
   }
 
@@ -99,7 +78,9 @@ function EmployeeManagement() {
     }
   }
 
+  
   return (
+    
     <div>
       <div>
         <div className="d-flex" role="search" mt-2>
@@ -120,7 +101,7 @@ function EmployeeManagement() {
       <div className="row">
         <h4>Add Employee</h4>
         <hr />
-        <div className="col-md-6 bg-light p-3  shadow-sm">
+        <form className="col-md-6 bg-light p-3  shadow-sm needs-validation" novalidate>
           <div className="mb-3  ">
             <input
               className="form-control"
@@ -130,8 +111,11 @@ function EmployeeManagement() {
               value={newEmployee.idNumber}
               onChange={InputChange}
               required
-              id="validationCustom01"
+              id="id_number"
             />
+             <div class="invalid-feedback">
+           Please provide a valid ID Number.
+        </div>
           </div>
           <div className="mb-3">
             <input
@@ -203,17 +187,21 @@ function EmployeeManagement() {
             />
           </div>
 
-          <button className="btn btn-primary" onClick={AddEmployee}>
+          <button className="btn btn-primary" onClick={AddEmployee} type="submit">
             Add
           </button>
 
           <hr />
-        </div>
+        </form>
 
         <div className="col-md-6 ">
+         
           {employees.map((employee) => (
             <div key={employee.idNumber} className="bg-light p-3  shadow-sm">
-              <span>
+               <div className="row">
+            <div className="col-md-4"> <img src={employees.image="https://placehold.co/128x128"} alt="" /> </div>
+            <div className="col-md">
+            <span>
                 <b>Name:</b> {employee.firstName} {employee.lastName}{" "}
               </span>
               <br />
@@ -228,7 +216,10 @@ function EmployeeManagement() {
               <span>
                 <b>Phone:</b> {employee.phoneNumber}
               </span>
-              <img src={employee.image} alt="" />
+             
+            </div>
+          </div>
+              
               <hr />
 
               <button
