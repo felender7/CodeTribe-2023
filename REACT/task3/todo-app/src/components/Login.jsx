@@ -26,60 +26,40 @@ function Login() {
     navigate("/home");
   };
   return (
-    <div class="container-fluid ps-md-0">
-      <div className="row g-0">
-        <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image" ></div>
-        <div class="col-md-8 col-lg-6">
-          <div class="login d-flex align-items-center py-5">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-9 col-lg-8 mx-auto">
-                  <h3 class="login-heading mb-4">Welcome back!</h3>
-                  <form onSubmit={handleSubmit}>
-                    <div class="form-floating mb-3">
-                      <input
-                        type="email"
-                        className="form-control"
-                        id="floatingInput"
-                        placeholder="name@example.com"
-                        onChange={InputChange}
-                        required
-                      />
-                      <label for="floatingInput">Email address</label>
-                    </div>
-                    <div className="form-floating mb-3">
-                      <input
-                        type="password"
-                        className="form-control"
-                        id="floatingPassword"
-                        placeholder="Password"
-                        onChange={InputChange}
-                        required
-                      />
-                      <label for="floatingPassword">Password</label>
-                    </div>
-
-                    <div className="d-grid">
-                      <button
-                        className="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2"
-                        type="submit"
-                      >
-                        Sign in
-                      </button>
-                      <div className="text-center">
-                        <Link to="/registration" className="small" href="#">
-                          Register
-                        </Link>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+    <div className="container">
+    <div className="row">
+      <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div className="card border-0 shadow rounded-3 my-5">
+          <div className="card-body p-4 p-sm-5">
+            <h5 className="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
+            <form onSubmit={handleSubmit}>
+              <div className="form-floating mb-3">
+                <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" required/>
+                <label for="floatingInput">Email address</label>
               </div>
-            </div>
+              <div className="form-floating mb-3">
+                <input type="password" className="form-control" id="floatingPassword" placeholder="Password" required/>
+                <label for="floatingPassword">Password</label>
+              </div>
+
+              <div className="form-check mb-3">
+                <input className="form-check-input" type="checkbox" value="" id="rememberPasswordCheck"/>
+                <label className="form-check-label" for="rememberPasswordCheck">
+                  Remember password
+                </label>
+              </div>
+              <div className="d-grid">
+                <button className="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign
+                  in</button>
+              </div>
+        
+            </form>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
   );
 }
 
