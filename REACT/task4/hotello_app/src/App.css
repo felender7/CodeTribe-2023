@@ -1,3 +1,9 @@
+body{
+    background-color: whitesmoke;
+}
+
+
+
 .btn-outline-success {
     --bs-btn-color: #c19b76;
     --bs-btn-border-color: #c19b76;
