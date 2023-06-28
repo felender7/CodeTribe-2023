@@ -23,17 +23,29 @@
   z-index: 10;
   position: absolute;
 }
-.search-rates input{
+.search-rates input {
   border: none;
   height: 50px;
   border-right: 1px solid lightgray;
 }
-.search-rates select{
+.search-rates select {
   border: none;
   height: 50px;
+  width: 150px;
+  border-right: 1px solid lightgray;
 }
 
+.input-group-append {
+  cursor: pointer;
+}
 
+.search-rates .btn-rates {
+  background-color: #c19b76;
+  color: whitesmoke;
+  height: 50px;
+  padding: 14px;
+  text-decoration: none;
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */

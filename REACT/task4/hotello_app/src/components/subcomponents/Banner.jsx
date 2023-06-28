@@ -148,13 +148,31 @@ function Banner() {
         </div>
         <br />
         <div className="search-rates mt-6">
-          <input type="text" name="" id="" placeholder="choose Date" />
+        
+           <input type="text" name="" id="" placeholder="Pick Date" />
+         
+          
           <select aria-label="Default select example">
             <option selected>Guests</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="2">4</option>
+            <option value="3">5</option>
           </select>
+
+          <select aria-label="Default select example">
+            <option selected>Children</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="2">4</option>
+            <option value="3">5</option>
+          </select>
+
+          <a className="btn-rates" href="#">
+                      Check Rates
+                    </a>
         </div>
       </div>
     </>
