@@ -24,9 +24,16 @@
   position: absolute;
 }
 .search-rates input{
-  
+  border: none;
+  height: 50px;
+  border-right: 1px solid lightgray;
+}
+.search-rates select{
+  border: none;
   height: 50px;
 }
+
+
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
