@@ -1,9 +1,10 @@
 import React from "react";
+import { Slider1,Slider2,Slider3 } from "../Imports";
+
 import "./carousel.css";
 
 function Banner() {
   return (
-    <>
       <div>
         <div
           id="myCarousel"
@@ -35,55 +36,27 @@ function Banner() {
           </div>
           <div className="carousel-inner ">
             <div className="carousel-item active mb-3">
-              <svg
-                className="bd-placeholder-img"
-                width="100%"
-                height="100%"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="var(--bs-secondary-color)"
-                />
-              </svg>
-              <div className="container">
+              <img src={Slider1} alt="slider_1" className="img-fluid"/>
+              <div className="container"> 
                 <div className="carousel-caption text-center">
-                  <h1>headline1.</h1>
-                  <p className="opacity-75">Place Holder.</p>
+                  <h1>Effortless Hotel Booking Made Easy</h1>
+                  <p className="opacity-75">Discover a Seamless Experience for Your Perfect Stayr</p>
                   <p>
-                    <a className="btn btn-outline-success" href="#">
-                      Sign up today
+                    <a className="btn btn-outline-success btn-lg" href="#">
+                      Learn more 
                     </a>
                   </p>
                 </div>
               </div>
             </div>
             <div className="carousel-item mb-3">
-              <svg
-                className="bd-placeholder-img"
-                width="100%"
-                height="100%"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="var(--bs-secondary-color)"
-                />
-              </svg>
+            <img src={Slider2} alt="slider_2" className="img-fluid"/>
               <div className="container">
                 <div className="carousel-caption">
-                  <h1>headline2</h1>
-                  <p>PlaceHolder2.</p>
+                  <h1>Simplify Your Travel Plans</h1>
+                  <p>Effortless Hotel Booking Made Easy</p>
                   <p>
-                    <a className="btn btn-outline-success" href="#">
+                    <a className="btn btn-outline-success btn-lg" href="#">
                       Learn more
                     </a>
                   </p>
@@ -91,27 +64,13 @@ function Banner() {
               </div>
             </div>
             <div className="carousel-item mb-3">
-              <svg
-                className="bd-placeholder-img"
-                width="100%"
-                height="100%"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="var(--bs-secondary-color)"
-                />
-              </svg>
+            <img src={Slider3} alt="slider_3" className="img-fluid"/>
               <div className="container">
                 <div className="carousel-caption text-center">
-                  <h1>headline3</h1>
-                  <p>PlaceHolder3</p>
+                  <h1>Effortless Hotel Booking:</h1>
+                  <p>Your Gateway to Memorable Stays</p>
                   <p>
-                    <a className="btn btn-outline-success" href="#">
+                    <a className="btn btn-outline-success btn-lg" href="#">
                       Browse gallery
                     </a>
                   </p>
@@ -171,11 +130,11 @@ function Banner() {
           </select>
 
           <a className="btn-rates" href="#">
-                      Check Rates
+                      CHECK RATES
                     </a>
         </div>
       </div>
-    </>
+   
   );
 }
 

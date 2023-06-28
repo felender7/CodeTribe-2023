@@ -24,11 +24,13 @@
   position: absolute;
 }
 .search-rates input {
+  padding-left: 10px;
   border: none;
   height: 50px;
   border-right: 1px solid lightgray;
 }
 .search-rates select {
+ 
   border: none;
   height: 50px;
   width: 150px;
