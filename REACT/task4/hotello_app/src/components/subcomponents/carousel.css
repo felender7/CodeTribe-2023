@@ -11,6 +11,9 @@
   height: 32rem;
 }
 
+.carousel img{
+ object-fit: cover;
+}
 .search-rates {
   margin-left: auto;
   margin-right: auto;
