@@ -1,27 +1,65 @@
-import React from 'react'
-import { Slider1 } from './Imports'
+import React, { useState } from "react";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../config/firebase";
+
 function SignUp() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function Register() {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        alert("Successfully registered!");
+        console.log("successfully logged in")
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  }
+
   return (
-    <div className="centered-form bg-image ">
-    <div className="card" style={{width: "600px"}}>
-      <div className="card-body">
-        <h4 className="card-title">SIGN UP</h4>
-        <hr />
-        <form>
-          <div className="mb-3">
-            <label for="inputEmail" className="form-label">Email address</label>
-            <input type="email" className="form-control" id="inputEmail" placeholder="Enter email"/>
-          </div>
-          <div className="mb-3">
-            <label for="inputPassword" className="form-label">Password</label>
-            <input type="password" className="form-control" id="inputPassword" placeholder="Password"/>
-          </div>
-          <button type="submit" className="btn btn-outline-success">Sign Up</button>
-        </form>
+    <div className="centered-form bg-image">
+      <div className="card" style={{ width: "600px" }}>
+        <div className="card-body">
+          <h4 className="card-title">SIGN UP</h4>
+          <hr />
+          <form>
+            <div className="mb-3">
+              <label htmlFor="inputEmail" className="form-label">
+                Email address
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="inputEmail"
+                placeholder="Enter email"
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="inputPassword" className="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                id="inputPassword"
+                placeholder="Password"
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </div>
+            <button
+              type="submit"
+              className="btn btn-outline-success"
+              onClick={Register}
+            >
+              Sign Up
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-  )
+  );
 }
 
-export default SignUp
+export default SignUp;
