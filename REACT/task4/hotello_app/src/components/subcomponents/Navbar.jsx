@@ -1,13 +1,14 @@
 import React from "react";
 import { Logo } from "../Imports";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg  bg-dark"  data-bs-theme="dark">
       <div className="container text-light">
-        <a className="navbar-brand" href="#">
+        <Link to="/" className="navbar-brand">
         <img src={Logo} alt="logo" width="150" />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,38 +23,33 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#" >
+              <Link to="/rooms" className="nav-link active" aria-current="page" >
                 Rooms & Suites
-              </a>
+              </Link>
             </li>
+         
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                News
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/galary" className="nav-link">
                 Gallery
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/about" className="nav-link" >
                 About
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/contacts" className="nav-link">
                 Contacts
-              </a>
+              </Link>
             </li>
 
           </ul>
 
           <div className="d-flex">
-          <a class="btn btn-outline-success"  href="#">BOOK NOW</a>
+          <Link to="#" className="btn btn-outline-success" >BOOK NOW</Link>
           </div>
         </div>
       </div>
