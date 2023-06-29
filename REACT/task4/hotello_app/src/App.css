@@ -20,3 +20,18 @@ body{
     --bs-btn-disabled-border-color: #c19b76;
     --bs-gradient: none;
   }
+
+  .centered-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .bg-image {
+    background-image: url('./assets/slider1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  
+  }

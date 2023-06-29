@@ -8,6 +8,7 @@ import About from './components/About'
 import Contacts from './components/Contacts'
 import DashBoard from './dashboard/Dashboard'
 import PageError from './components/PageError';
+import SignUp from './components/SignUp';
 
 import './App.css';
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/dashboard" element={<DashBoard/>}/>
           <Route path="*" element={<PageError/>}/>
+          <Route path="/sign_up" element={<SignUp/>}/>
         </Routes>
     </div>
   );
