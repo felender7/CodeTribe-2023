@@ -1,9 +1,9 @@
 import React from "react";
-import { Slider1,Slider2,Slider3 } from "../Imports";
-
+import { Slider1,Slider2, Slider3 } from "../Imports";
 import "./carousel.css";
 
 function Banner() {
+ 
   return (
       <div>
         <div
@@ -132,6 +132,7 @@ function Banner() {
           <a className="btn-rates" href="#">
                       CHECK RATES
                     </a>
+
         </div>
       </div>
    
