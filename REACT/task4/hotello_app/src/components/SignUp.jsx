@@ -3,9 +3,10 @@ import { Slider1 } from './Imports'
 function SignUp() {
   return (
     <div className="centered-form bg-image ">
-    <div className="card" style={{width: "400px"}}>
+    <div className="card" style={{width: "600px"}}>
       <div className="card-body">
-        <h5 className="card-title">Sign Up</h5>
+        <h4 className="card-title">SIGN UP</h4>
+        <hr />
         <form>
           <div className="mb-3">
             <label for="inputEmail" className="form-label">Email address</label>
