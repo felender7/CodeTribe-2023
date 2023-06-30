@@ -10,6 +10,7 @@ import DashBoard from './dashboard/Dashboard'
 import PageError from './components/PageError';
 import LoginForm from './components/Login';
 import SignUp from './components/SignUp';
+import AddHotelForm from './dashboard/AddHotelForm';
 
 import './App.css';
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="*" element={<PageError/>}/>
           <Route path="/login" element={<LoginForm/>}/>
           <Route path="/sign_up" element={<SignUp/>}/>
+          <Route path="/add_hotel" element={<AddHotelForm/>}/>
         </Routes>
     </div>
   );

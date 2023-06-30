@@ -1,40 +1,47 @@
 import React from 'react'
 import { LogoWhite } from '../components/Imports'
+import { Link } from 'react-router-dom'
 
 function Dashboard() {
   return (
     <div>
 
-<div class="dashboard">
-    <div class="dashboard-header bg-dark">
-      <img src={LogoWhite} style={{width:"200px"}} className='img-fluid'/>
-      <a href="#" class="btn btn-outline-success">Logout</a>
+<div className="dashboard">
+    <div className="dashboard-header bg-dark">
+      <img src={LogoWhite} style={{width:"200px"}} classNameName='img-fluid'/>
+      <a href="#" className="btn btn-outline-success">Logout</a>
     </div>
-    <div class="row">
-      <div class="col-md-3">
-        <div class="dashboard-sidebar">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" href="#"> <i class="bi bi-speedometer2"></i> Dashboard</a>
+    <div className="row">
+      <div className="col-md-3">
+        <div className="dashboard-sidebar">
+          <ul className="nav flex-column">
+            <li className="nav-item">
+              <a className="nav-link active" href="#"> <i className="bi bi-speedometer2"></i> Dashboard</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="bi bi-plus-circle-fill"></i> Add Hotel</a>
+            <li className="nav-item">
+              <Link to="/add_hotel" className="nav-link"><i className="bi bi-plus-circle-fill"></i> Add Hotel</Link>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"> <i class="bi bi-calendar-event"></i> Booked Hotels</a>
+            <li className="nav-item">
+              <a className="nav-link" href="#"> <i className="bi bi-calendar-event"></i> Booked Hotels</a>
             </li>
            
           </ul>
         </div>
       </div>
-      <div class="col-md-9">
-        <div class="dashboard-content">
+      <div className="col-md-9">
+        <div className="dashboard-content">
           <h3>Welcome to the Dashboard</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, dolores.</p>
+          <p>.....</p>
+
+          <hr />
+          <h4>Recently Added Hotels</h4>
+          <p>Nothing Yet</p>
         </div>
       </div>
+
+      
     </div>
-    <div class="dashboard-footer">
+    <div className="dashboard-footer mt-5">
       <p>&copy; 2023 Hotello App. All rights reserved.</p>
     </div>
   </div>
