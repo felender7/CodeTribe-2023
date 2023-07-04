@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
-import { db, storage } from "../config/firebase";
+import { db, storage } from "../../../config/firebase";
 import { ref, uploadBytes,getDownloadURL } from "firebase/storage";
 
 function AddHotelForm() {

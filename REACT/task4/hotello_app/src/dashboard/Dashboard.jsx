@@ -5,46 +5,38 @@ import { Link } from 'react-router-dom'
 function Dashboard() {
   return (
     <div>
-
-<div className="dashboard">
-    <div className="dashboard-header bg-dark">
-      <img src={LogoWhite} style={{width:"200px"}} classNameName='img-fluid'/>
-      <a href="#" className="btn btn-outline-success">Logout</a>
-    </div>
-    <div className="row">
-      <div className="col-md-3">
-        <div className="dashboard-sidebar">
-          <ul className="nav flex-column">
-            <li className="nav-item">
-              <a className="nav-link active" href="#"> <i className="bi bi-speedometer2"></i> Dashboard</a>
-            </li>
-            <li className="nav-item">
-              <Link to="/add_hotel" className="nav-link"><i className="bi bi-plus-circle-fill"></i> Add Hotel</Link>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#"> <i className="bi bi-calendar-event"></i> Booked Hotels</a>
-            </li>
-           
-          </ul>
-        </div>
-      </div>
-      <div className="col-md-9">
-        <div className="dashboard-content">
-          <h3>Welcome to the Dashboard</h3>
-          <p>.....</p>
-
-          <hr />
-          <h4>Recently Added Hotels</h4>
-          <p>Nothing Yet</p>
-        </div>
-      </div>
-
-      
-    </div>
-    <div className="dashboard-footer mt-5">
-      <p>&copy; 2023 Hotello App. All rights reserved.</p>
-    </div>
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container-fluid">
+<a class="navbar-brand" href="#">Bootstrap 5 Admin Dashboard</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item active">
+<a class="nav-link" href="#">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Dashboard</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Users</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Settings</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<h1>Bootstrap 5 Admin Dashboard</h1>
+<p>This is a simple Bootstrap 5 admin dashboard. It includes a navigation bar, a navbar collapse, and a container with a row and a column.</p>
+</div>
+</div>
+</div>
   
     </div>
   )
