@@ -106,11 +106,8 @@ function Banner() {
           </button>
         </div>
         <br />
-        <div className="search-rates mt-6">
-        
-           <input type="text" name="" id="" placeholder="Pick Date" />
-         
-          
+        <div className="search-rates mt-6 text-dark">
+           <input type="text" name="pick date" id="pickDate"  className="datepicker" placeholder="Pick Date" style={{borderRadius:"0px"}} />
           <select aria-label="Default select example">
             <option selected>Guests</option>
             <option value="1">1</option>

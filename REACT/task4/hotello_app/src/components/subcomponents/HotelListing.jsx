@@ -49,7 +49,7 @@ function HotelListing({ hotels }) {
           {hotels.map((hotel) => (
             <div key={hotel.id}>
               <div class="col">
-                <div class="card" style={{ height: "427px" }}>
+                <div class="card" style={{ height: "450px" }}>
                   <img src={hotel.imageUrl} class="card-img-top" alt="Hotel Image" />
                   <div class="card-body">
                     <h5 class="card-title">{hotel.name}</h5>
