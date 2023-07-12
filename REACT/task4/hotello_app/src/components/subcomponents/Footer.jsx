@@ -34,7 +34,7 @@ function Footer() {
                 <div className="col-md-12">
                     <hr/>
                     <p className="text-center">
-                        &copy; 2023 Hotel Name. All rights reserved.  Made with <i className="bi bi-heart-fill text-danger"></i> in <a
+                        &copy; 2023 Hotello All rights reserved.  Made with <i className="bi bi-heart-fill text-danger"></i> in <a
                         href="https://github.com/felender7">South Africa</a>
                     </p>
                 </div>

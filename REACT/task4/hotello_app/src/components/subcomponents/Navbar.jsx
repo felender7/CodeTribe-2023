@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg  bg-dark"  data-bs-theme="dark">
+    <nav className="navbar navbar-expand-lg  bg-dark fixed"  data-bs-theme="dark">
       <div className="container text-light">
         <Link to="/" className="navbar-brand">
         <img src={Logo} alt="logo" width="150" />

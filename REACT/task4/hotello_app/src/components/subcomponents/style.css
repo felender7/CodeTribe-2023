@@ -199,7 +199,7 @@ footer a {
 
 .h3,h3 {
   font-family: 'Raleway';
-  color: #333;
+  color: #4c4c4c;
   font-size: 30px;
   font-weight: 400;
   line-height: 42px;
@@ -241,4 +241,8 @@ footer a {
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
+}
+
+section input{
+  border-radius: 0px !important;
 }

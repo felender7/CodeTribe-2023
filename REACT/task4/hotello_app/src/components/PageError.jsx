@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function PageError() {
   return (
@@ -10,6 +11,7 @@ function PageError() {
             <h1 className="display-4">404</h1>
             <p className="lead">Page not found</p>
             <p>Sorry, the page you are looking for does not exist.</p>
+            <Link to="/" className="btn btn-outline-success">Home</Link>
           </div>
         </div>
       </div>

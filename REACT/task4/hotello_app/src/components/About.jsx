@@ -58,8 +58,8 @@ function About() {
               <img src={Home1} alt="Image 1" />
               <div className="overlay">
                 <div className="overlay-content">
-                  <h3>Image 1</h3>
-                  <p>Description of Image 1</p>
+                  <h3 className='text-light'>24H Room Service 1</h3>
+                  <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
                 </div>
               </div>
             </div>
@@ -69,8 +69,8 @@ function About() {
               <img src={Home2} alt="Image 2" />
               <div className="overlay">
                 <div className="overlay-content">
-                  <h3>Image 2</h3>
-                  <p>Description of Image 2</p>
+                  <h3 className='text-light'>Restaurant And Bars</h3>
+                  <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
                 </div>
               </div>
             </div>
@@ -80,8 +80,8 @@ function About() {
               <img src={Home3} alt="Image 3" />
               <div className="overlay">
                 <div className="overlay-content">
-                  <h3>Image 3</h3>
-                  <p>Description of Image 3</p>
+                  <h3 className='text-light'>Events And Meetings</h3>
+                  <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
                 </div>
               </div>
             </div>
@@ -93,5 +93,4 @@ function About() {
     </div>
   )
 }
-
 export default About

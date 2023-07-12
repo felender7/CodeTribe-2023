@@ -38,7 +38,6 @@ function Rooms() {
           <h1 className='text-light'>Rooms & suits</h1>
         </div>
       </div>
-
       <HotelListing hotels={hotels} />
       <Footer />
     </div>

@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Galary() {
+function Gallery() {
   return (
     <div>
-      <h1>Galary</h1>
+      
     </div>
   )
 }
 
-export default Galary
+export default Gallery

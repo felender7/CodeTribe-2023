@@ -5,7 +5,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase"
 import Home from './components/Home';
 import Rooms from './components/Rooms'
-import Galary from './components/Galary'
+import Gallery from './components/Gallery'
 import About from './components/About'
 import Contacts from './components/Contacts'
 import DashBoard from './dashboard/Dashboard'
@@ -47,7 +47,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/rooms" element={<Rooms />} />
-          <Route path="/galary" element={<Galary />} />
+          <Route path="/galary" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/dashboard" element={<DashBoard hotels={hotels}/>}/>
