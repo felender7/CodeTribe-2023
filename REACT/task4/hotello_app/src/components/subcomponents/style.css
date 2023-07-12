@@ -243,6 +243,9 @@ footer a {
   color: #fff;
 }
 
-section input{
+section input  {
+  border-radius: 0px !important;
+}
+textarea{
   border-radius: 0px !important;
 }
