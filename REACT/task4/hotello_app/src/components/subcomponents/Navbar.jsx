@@ -29,7 +29,7 @@ function Navbar() {
             </li>
          
             <li className="nav-item">
-              <Link to="/galary" className="nav-link">
+              <Link to="/gallery" className="nav-link">
                 Gallery
               </Link>
             </li>

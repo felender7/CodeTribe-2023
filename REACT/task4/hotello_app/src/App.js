@@ -14,7 +14,8 @@ import LoginForm from './components/Login';
 import SignUp from './components/SignUp';
 import AddHotel from './dashboard/views/hotels/New'
 import ShowHotel from "./dashboard/views/hotels/Show"
-import ListHotels from './dashboard/views/hotels/index'
+import ListHotels from './dashboard/views/hotels/Index'
+import AddGalleriImages from "./dashboard/views/gallery/AddNew";
 
 import './App.css';
 function App() {
@@ -47,7 +48,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/rooms" element={<Rooms />} />
-          <Route path="/galary" element={<Gallery />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/dashboard" element={<DashBoard hotels={hotels}/>}/>
@@ -56,6 +57,7 @@ function App() {
           <Route path="/sign_up" element={<SignUp/>}/>
           <Route path="/add_hotel" element={<AddHotel/>}/>
           <Route path="/show_hotel" element={<ShowHotel />}/>
+          <Route path="/add_gallery" element={<AddGalleriImages/>}/>
           <Route
           path="/list_hotels"
           element={<ListHotels hotels={hotels} />}

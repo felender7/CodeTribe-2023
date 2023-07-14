@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db, storage } from "../../../config/firebase";
-import { ref, uploadBytes,getDownloadURL } from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import Header from '../components/dashboardNav'
+import Footer from '../components/dashboardFooter'
+import { Room1 } from "../../../components/Imports";
 
 function AddHotelForm() {
   const [name, setName] = useState("");
@@ -57,93 +60,105 @@ function AddHotelForm() {
   };
 
   return (
-    <div className="container mt-5">
-      <div>
-        <h3>Add Hotel</h3>
-        <form>
-          <div className="mb-3">
-            <label htmlFor="name" className="form-label">
-              Name
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
+    <div>
+      <Header />
+      <div className="container mt-5">
+      <div className="row">
+        
+          <div className="col-md-8 p-3 bg-light shadow-sm mb-5 ">
+
+            <div>
+              <h3>Add Hotel</h3>
+              <form>
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    className="form-control" placeholder="Hotel Name"
+                    id="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <textarea
+                  placeholder="Description"
+                    className="form-control"
+                    id="description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    required
+                  ></textarea>
+                </div>
+                <div className="mb-3">
+                  <select
+                    aria-label="Guests"
+                    className="form-select"
+                    id="guest"
+                    value={guest}
+                    onChange={(e) => setGuest(e.target.value)}
+                    required
+                  >
+                    <option disabled selected>Guests</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+                <div className="mb-3">
+                  <select
+                    aria-label="Children"
+                    className="form-select"
+                    id="children"
+                    value={children}
+                    onChange={(e) => setChildren(e.target.value)}
+                    required
+                  >
+                    <option disabled selected>Children</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+                <div className="mb-3">
+                  
+                  <input
+                  placeholder="Price"
+                    type="text"
+                    className="form-control"
+                    id="price"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    required
+                    style={{width:"100px"}}
+                  />
+                </div>
+                <input className="form-control"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  required
+                />
+                <br />
+                <button type="submit" className="btn btn-outline-success mt-3" onClick={handleSubmit}>
+                  Save
+                </button>
+              </form>
+            </div>
+
+
           </div>
-          <div className="mb-3">
-            <label htmlFor="description" className="form-label">
-              Description
-            </label>
-            <textarea
-              className="form-control"
-              id="description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              required
-            ></textarea>
+          <div className="col-md-4">
+          <img src={Room1} alt="" className="img-fluid"  style={{width:"100%"}}/>
           </div>
-          <div className="mb-3">
-            <select
-              aria-label="Guests"
-              className="form-select"
-              id="guest"
-              value={guest}
-              onChange={(e) => setGuest(e.target.value)}
-              required
-            >
-              <option disabled selected>Guests</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </div>
-          <div className="mb-3">
-            <select
-              aria-label="Children"
-              className="form-select"
-              id="children"
-              value={children}
-              onChange={(e) => setChildren(e.target.value)}
-              required
-            >
-              <option disabled selected>Children</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </div>
-          <div className="mb-3">
-            <label htmlFor="price" className="form-label">
-              Price
-            </label>
-            <input
-              type="number"
-              className="form-control"
-              id="price"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              required
-            />
-          </div>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            required
-          />
-          <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
-            Save
-          </button>
-        </form>
+
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }
