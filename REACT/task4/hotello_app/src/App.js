@@ -21,19 +21,25 @@ import './App.css';
 function App() {
 
   const [hotels, setHotels] = useState([]);
+  const [gallery, setGallery] = useState([])
   useEffect(() => {
     const fetchHotels = async () => {
       try {
         // Retrieve the collection "hotels" from Firestore
+        // Retrieve the collection "gallery" from Firestore
         const querySnapshot = await getDocs(collection(db, "hotels"));
+        const querySnapshot_gallery = await getDocs(collection(db, "gallery"));
 
         // Map the query snapshot to an array of hotel data objects
         const hotelsData = querySnapshot.docs.map((doc) => doc.data());
-        console.log(hotelsData)
+        const galleryData = querySnapshot_gallery.docs.map((doc) => doc.data());
+        console.log(galleryData)
         
      
         // Set the hotels state with the retrieved data
+        // Set the gallery state with the retrieved data
         setHotels(hotelsData);
+        setGallery(galleryData)
       } catch (error) {
         console.error("Error fetching hotels: ", error);
       }
@@ -48,7 +54,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/rooms" element={<Rooms />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery" element={<Gallery  gallery={gallery} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/dashboard" element={<DashBoard hotels={hotels}/>}/>
