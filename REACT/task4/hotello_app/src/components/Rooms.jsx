@@ -4,7 +4,7 @@ import Footer from './subcomponents/Footer'
 import HotelListing from './subcomponents/HotelListing'
 
 
-function Rooms({hotels}) {
+function Rooms() {
   return (
     <div>
       <Navbar />
@@ -13,7 +13,7 @@ function Rooms({hotels}) {
           <h1 className='text-light'>Rooms & suits</h1>
         </div>
       </div>
-      <HotelListing hotels={hotels} />
+      <HotelListing />
       <Footer />
     </div>
   )

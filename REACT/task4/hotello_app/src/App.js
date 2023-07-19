@@ -17,7 +17,7 @@ import AddHotel from './dashboard/views/hotels/New'
 import ShowHotel from "./dashboard/views/hotels/Show"
 import ListHotels from './dashboard/views/hotels/Index'
 import AddGalleriImages from "./dashboard/views/gallery/AddNew";
-import ShowHotelDetails from "./components/subcomponents/ShowHotelDetails";
+import ShowHotelDetails from "./components/ShowHotel";
 
 import './App.css';
 function App() {

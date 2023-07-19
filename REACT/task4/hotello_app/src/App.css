@@ -80,3 +80,13 @@ select {
   border-radius: 1px !important;
 }
 
+.single-room__sidebar {
+  order: 2;
+  width: 32%;
+  padding: 0 15px
+}
+
+.price-pernight{
+  border: #c19b76 1px solid;
+  padding:5px
+}
