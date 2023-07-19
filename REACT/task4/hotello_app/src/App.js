@@ -1,8 +1,9 @@
 
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes  } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./config/firebase"
+
 import Home from './components/Home';
 import Rooms from './components/Rooms'
 import Gallery from './components/Gallery'
@@ -16,12 +17,14 @@ import AddHotel from './dashboard/views/hotels/New'
 import ShowHotel from "./dashboard/views/hotels/Show"
 import ListHotels from './dashboard/views/hotels/Index'
 import AddGalleriImages from "./dashboard/views/gallery/AddNew";
+import ShowHotelDetails from "./components/subcomponents/ShowHotelDetails";
 
 import './App.css';
 function App() {
 
   const [hotels, setHotels] = useState([]);
   const [gallery, setGallery] = useState([])
+
   useEffect(() => {
     const fetchHotels = async () => {
       try {
@@ -31,9 +34,13 @@ function App() {
         const querySnapshot_gallery = await getDocs(collection(db, "gallery"));
 
         // Map the query snapshot to an array of hotel data objects
-        const hotelsData = querySnapshot.docs.map((doc) => doc.data());
+         // Map the query snapshot to an array of hotel data objects with document ID included
+      const hotelsData = querySnapshot.docs.map((doc) => ({
+        id: doc.id, // Include the document ID
+        ...doc.data(),
+      }));
         const galleryData = querySnapshot_gallery.docs.map((doc) => doc.data());
-        console.log(galleryData)
+      
         
      
         // Set the hotels state with the retrieved data
@@ -68,6 +75,7 @@ function App() {
           path="/list_hotels"
           element={<ListHotels hotels={hotels} />}
         />
+         <Route path="/show_hotel_details/:id" element={<ShowHotelDetails hotels={hotels}/>} />  
          
         </Routes>
     </div>
