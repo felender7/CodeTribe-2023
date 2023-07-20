@@ -113,6 +113,25 @@ select {
 .text-mute{
   color: #cacacabf !important;
 }
-.personal-details .form-control{
+.personal-details .form-control  {
   height: 50px !important;
+}
+
+.custom-btn {
+  background-color: #c19b76;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.custom-btn:hover {
+  background-color: #a17d50;
+}
+
+.custom-btn:active {
+  transform: scale(0.95);
 }
