@@ -249,3 +249,13 @@ section input  {
 textarea{
   border-radius: 0px !important;
 }
+
+table tr td strong {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end
+
+}
+table{
+  line-height: 50px;
+}

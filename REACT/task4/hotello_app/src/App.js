@@ -18,6 +18,7 @@ import ShowHotel from "./dashboard/views/hotels/Show"
 import ListHotels from './dashboard/views/hotels/Index'
 import AddGalleriImages from "./dashboard/views/gallery/AddNew";
 import ShowHotelDetails from "./components/ShowHotel";
+import Reservation from "./components/Reservation"
 
 import './App.css';
 function App() {
@@ -76,7 +77,7 @@ function App() {
           element={<ListHotels hotels={hotels} />}
         />
          <Route path="/show_hotel_details/:id" element={<ShowHotelDetails hotels={hotels}/>} />  
-         
+         <Route path="/reservation" element={<Reservation/>}/>
         </Routes>
     </div>
   );

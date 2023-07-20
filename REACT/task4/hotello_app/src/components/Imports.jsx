@@ -10,9 +10,17 @@ import Room4 from "../assets/room4.jpeg"
 import Home1 from '../assets/home_image_1.jpg'
 import Home2 from '../assets/home_image_2.jpg'
 import Home3 from '../assets/home_image_3.jpg'
-
-
-
+import Slippers from '../assets/slippers.png'
+import Concierge from '../assets/concierge.png'
+import Wifi from '../assets/free-wifi.png'
+import Mop from '../assets/mop.png'
+import Television from '../assets/television.png'
+import AirConditioner from '../assets/air-conditioner.png'
+import WeightLifting from '../assets/weight-lifting.png'
+import Shower from '../assets/shower.png'
+import Smoking from '../assets/smoking.png'
+import Deal from '../assets/deal.png'
+import Minibar from '../assets/minibar.png'
 
 
 export{
@@ -28,5 +36,16 @@ export{
     Home1,
     Home2,
     Home3,
-   
+    Slippers,
+    Concierge,
+    Wifi,
+    Mop,
+    Television,
+    AirConditioner,
+    WeightLifting,
+    Shower,
+    Smoking,
+    Deal,
+    Minibar
+    
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function CTA() {
   return (
@@ -7,7 +8,7 @@ function CTA() {
         <div class="overlay-content">
             <h1>Plan Your Next Getaway</h1>
             <p>Book your perfect stay at our luxurious hotel now!.</p>
-            <a class="btn btn-outline-success btn-lg"  href="#">Book Now</a>
+            <Link className="btn btn-outline-success btn-lg"  to="/rooms">Book Now</Link>
         </div>
     </div>
     </div>

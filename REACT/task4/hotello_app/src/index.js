@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'font-awesome/css/font-awesome.min.css';
 import "./index.css";
-import $ from 'jquery';
 import App from "./App";
 import { BrowserRouter } from 'react-router-dom'
 

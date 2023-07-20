@@ -1,6 +1,7 @@
 import React from "react";
 import { Slider1,Slider2, Slider3 } from "../Imports";
 import "./carousel.css";
+import { Link } from "react-router-dom";
 
 function Banner() {
  
@@ -42,9 +43,9 @@ function Banner() {
                   <h1>Effortless Hotel Booking Made Easy</h1>
                   <p className="opacity-75">Discover a Seamless Experience for Your Perfect Stayr</p>
                   <p>
-                    <a className="btn btn-outline-success btn-lg" href="#">
+                    <Link className="btn btn-outline-success btn-lg" to="/about">
                       Learn more 
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -56,9 +57,9 @@ function Banner() {
                   <h1>Simplify Your Travel Plans</h1>
                   <p>Effortless Hotel Booking Made Easy</p>
                   <p>
-                    <a className="btn btn-outline-success btn-lg" href="#">
-                      Learn more
-                    </a>
+                  <Link className="btn btn-outline-success btn-lg" to="/about">
+                      Learn more 
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -70,9 +71,9 @@ function Banner() {
                   <h1>Effortless Hotel Booking:</h1>
                   <p>Your Gateway to Memorable Stays</p>
                   <p>
-                    <a className="btn btn-outline-success btn-lg" href="#">
+                    <Link className="btn btn-outline-success btn-lg" to="/gallery">
                       Browse gallery
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>

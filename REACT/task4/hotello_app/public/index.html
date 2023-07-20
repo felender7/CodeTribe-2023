@@ -21,40 +21,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
-    
-
-    <script>
-      // Form validation using JavaScript
-      (function() {
-        'use strict';
-        // Fetch the form element
-        var form = document.getElementById('loginForm');
-        
-        // Add event listener to the form
-        form.addEventListener('submit', function(event) {
-          // Check if the form is valid
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          
-          // Add 'was-validated' class to show validation styles
-          form.classList.add('was-validated');
-        }, false);
-      })();
-    </script>
-
-<script>
-  // Initialize datepicker
-  $(document).ready(function() {
-    $('.datepicker').datepicker({
-      format: 'yyyy-mm-dd',
-      autoclose: true,
-      todayHighlight: true
-    });
-  });
-
-   
-</script>
+  
   </body>
 </html>

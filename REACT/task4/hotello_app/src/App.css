@@ -90,3 +90,29 @@ select {
   border: #c19b76 1px solid;
   padding:5px
 }
+
+.hotel-extras{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center
+}
+.reservation-td-r {
+  background-color: transparent !important;
+}
+
+.reservation-td-l{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-end;
+  background-color: transparent !important;
+}
+
+.text-mute{
+  color: #cacacabf !important;
+}
+.personal-details .form-control{
+  height: 50px !important;
+}
