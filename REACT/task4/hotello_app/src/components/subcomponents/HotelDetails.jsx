@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState  } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
@@ -6,6 +6,7 @@ import { db } from '../../config/firebase';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import HotelListing from './HotelListing';
+import CustomAlert from './CustomAlert';
 import { AirConditioner, Concierge, Shower, Smoking, Minibar, Television, Slippers, Wifi, WeightLifting, Mop } from '../Imports';
 
 function HotelDetails() {
@@ -18,6 +19,9 @@ function HotelDetails() {
     const navigate = useNavigate();
     const [totalPrice, setTotalPrice] = useState(0);
     const [errors, setErrors] = useState({});
+    const [showAlert, setShowAlert] = useState(false);
+    const [alertType, setAlertType] = useState('');
+    const [alertMessage, setAlertMessage] = useState('');
 
 
     //Passing data to reservation component
@@ -48,7 +52,10 @@ function HotelDetails() {
    const errors = {};
 
   if (nrDays.trim() === "" ){
-    errors.nrNights ="Number of nights required.";
+    errors.nrNights ="";
+    setAlertType('danger');
+    setAlertMessage('Number of nights required');
+    setShowAlert(true);
   }
 
   setErrors(errors);
@@ -250,7 +257,9 @@ function HotelDetails() {
                                 BOOK
                             </button>
 
-                            {errors.nrDays && <div className="p-3 bg-danger">{errors.nrDays}</div>}
+                            {showAlert && (
+                                <CustomAlert type={alertType} message={alertMessage} onClose={() => setShowAlert(false)} />
+                            )}
                         </div>
                     </div>
                 </div>
