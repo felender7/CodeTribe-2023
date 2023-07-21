@@ -202,7 +202,7 @@ function HotelDetails() {
 
                             <div className="row mb-3" >
                                 <div className='col-md-6'>
-                                    <label htmlFor="check-in"> <i class="bi bi-calendar-check"></i> Check In</label>
+                                    <label htmlFor="check-in"> <i class="bi bi-calendar-check"></i> Check-In</label>
                                     <DatePicker
                                         selected={checkIndDate}
                                         onChange={handleDateChangeCheckIn}
@@ -212,7 +212,7 @@ function HotelDetails() {
                                         value={checkIndDate && checkIndDate.toLocaleDateString()}
                                     /></div>
                                 <div className='col-md-6'>
-                                    <label htmlFor="check-out"> <i class="bi bi-calendar-x"></i> Check Out</label>
+                                    <label htmlFor="check-out"> <i class="bi bi-calendar-x"></i> Check-Out</label>
                                     <DatePicker
                                         selected={checkOutdDate}
                                         onChange={handleDateChangeCheckOut}
@@ -225,13 +225,16 @@ function HotelDetails() {
                             </div>
 
 
-                            <input type="text" name="Days" value={nrDays} className="form-control mb-3" placeholder="How Many Night(s)" style={{ borderRadius: "0px" }} onChange={handleNrDaysChnge} required />
+                            <input type="number" name="Days" value={nrDays} className="form-control mb-3" placeholder="Day(s)" style={{ borderRadius: "0px" }} onChange={handleNrDaysChnge} required />
                             <div className='price-pernight mt-3 p-3 md-3'>
                                 <h5>R{parseFloat(hotel.price).toFixed(2)} / PER NIGHT</h5>
                             </div>
                             <br />
-                            <button className="btn btn-outline-success" style={{ width: "100%" }} onClick={handleButtonClick}>
+                            <button className="btn btn-outline-success" style={{ width: "100%" }} disabled>
                                 CHECK AVAILABILITY
+                            </button> <hr />
+                            <button className="btn btn-outline-success" style={{ width: "100%" }} onClick={handleButtonClick}>
+                                BOOK
                             </button>
                         </div>
                     </div>

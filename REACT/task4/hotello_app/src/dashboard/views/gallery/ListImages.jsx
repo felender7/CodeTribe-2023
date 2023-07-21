@@ -3,7 +3,7 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db, storage } from "../../../config/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-function ListImages({gallery}) {
+function ListImages({ gallery }) {
 
     const [image, setImage] = useState(null);
 
@@ -39,34 +39,30 @@ function ListImages({gallery}) {
             alert("An error occurred while saving hotel details. Please try again later.");
         }
     };
-  return (
-    <div>
-       <div className="row">
-                <div className="col-md-4"> <div>
-                    <div className="container">
-                        <h4>Upload Image</h4>
-                        <hr />
-                        <div className="mb-3">
-
-                            <input type="file" className="form-control" id="fileInput" onChange={handleImageChange} />
-                        </div>
-                        <button className="btn btn-primary" onClick={handleUpload}>Upload</button>
+    return (
+        <div className="container">
+            <div className="row">
+                <div className="col-md-4 p-3 bg-dark text-light shadow-sm"> 
+                    <h4>Upload Image</h4>
+                    <hr />
+                    <div className="mb-3">
+                        <input type="file" className="form-control" id="fileInput" onChange={handleImageChange} />
                     </div>
-                </div></div>
-                <div className="col-md-8">
-                    <div className="container">
-                        <div className="display-flex-images">
-                            {gallery.map((gal) => (
-                                <div key={gal.id}>
-                                   <div className="col"> <img src={gal.imageUrl}  className="img-fluid"style={{width: "350px", height:"250px"}} alt=" Image" /></div>
-                                </div>
-                            ))}
+                    <button className="btn btn-primary" onClick={handleUpload}>Upload</button>
+                </div>
+                <div className="col-md-8 ">
+                    <div className="row p-3 bg-light  shadow-sm">
+                    {gallery.map((gal) => (
+                         <div className="col-md-2 mt-3">
+                        <div key={gal.id}>
+                                <img src={gal.imageUrl} className="img-fluid" style={{ width: "350px", height: "100px" }} alt=" Image" />
+                            </div>
                         </div>
-                    </div>
+                    ))}
+                  </div>
                 </div>
             </div>
-    </div>
-  )
+        </div>
+    )
 }
-
 export default ListImages
