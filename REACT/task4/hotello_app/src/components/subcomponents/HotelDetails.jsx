@@ -17,6 +17,7 @@ function HotelDetails() {
     const [nrDays, setNrDays] = useState('');
     const navigate = useNavigate();
     const [totalPrice, setTotalPrice] = useState(0);
+    const [errors, setErrors] = useState({});
 
 
     //Passing data to reservation component
@@ -31,7 +32,6 @@ function HotelDetails() {
     };
 
     // Handle date selection
-    
     const handleDateChangeCheckIn = (date) => {
         setCheckInDate(date);
     };
@@ -40,24 +40,34 @@ function HotelDetails() {
         setCheckOutDate(date);
     };
    
-    // Total amount price per night 
-
-  
-
     // Function to handle button click and redirect to the next component
     const handleButtonClick = () => {
-        // Redirect to the "/next" route and pass the textBoxValue as a query parameter
-        navigate(
-            `/reservation?checkindate=${encodeURIComponent(
-                checkIndDate
-            )}&checkoutdate=${encodeURIComponent(
-                checkOutdDate
-            )}&&nrDays=${encodeURIComponent(
-                nrDays
-            )}&&totalprice=${encodeURIComponent(totalPrice)}&&hotelname=${(encodeURIComponent(hotel.name))} `
-        );
-    };
 
+   
+   //Validate the forms
+   const errors = {};
+
+  if (nrDays.trim() === "" ){
+    errors.nrNights ="Number of nights required.";
+  }
+
+  setErrors(errors);
+
+  if (Object.keys(errors).length === 0) {
+    // Redirect to the "/next" route and pass the textBoxValue as a query parameter
+    navigate(
+        `/reservation?checkindate=${encodeURIComponent(
+            checkIndDate
+        )}&checkoutdate=${encodeURIComponent(
+            checkOutdDate
+        )}&&nrDays=${encodeURIComponent(
+            nrDays
+        )}&&totalprice=${encodeURIComponent(totalPrice)}&&hotelname=${(encodeURIComponent(hotel.name))} `
+    );
+  }
+
+
+}
     useEffect(() => {
         // Fetch data
         const fetchHotelDetails = async () => {
@@ -199,8 +209,7 @@ function HotelDetails() {
                     </div>
                     <div className="col">
                         <div className='p-5 bg-dark shadow-sm text-light'>
-
-                            <div className="row mb-3" >
+                            <div className="row mb-3 needs-validation" novalidate >
                                 <div className='col-md-6 '>
                                     <label htmlFor="check-in" className='mb-3'> <i class="bi bi-calendar-check"></i> CHECK-IN</label>
                                     <DatePicker
@@ -210,7 +219,10 @@ function HotelDetails() {
                                         placeholderText="Check In" name="check-in"
                                         style={{ borderRadius: "0px", with: "100%" }}
                                         value={checkIndDate && checkIndDate.toLocaleDateString()}
-                                    /></div>
+                                        required
+                                    />
+                                     
+                                    </div>
                                 <div className='col-md-6'>
                                     <label htmlFor="check-out" className='mb-3'> <i class="bi bi-calendar-x"></i> CHECK-OUT</label>
                                     <DatePicker
@@ -219,13 +231,14 @@ function HotelDetails() {
                                         className="form-control"
                                         placeholderText="Check out" name="check-out"
                                         style={{ borderRadius: "0px", with: "100%" }}
-                                        value={checkOutdDate ? checkOutdDate.toLocaleDateString() : ""}
+                                        value={checkOutdDate && checkOutdDate.toLocaleDateString()}
+                                        required
                                     />
                                 </div>
                             </div>
 
-
                             <input type="number" name="Days" value={nrDays} className="form-control mb-3" placeholder="Day(s)" style={{ borderRadius: "0px" }} onChange={handleNrDaysChnge} required />
+                           
                             <div className='price-pernight mt-3 p-3 md-3'>
                                 <h5>R{parseFloat(hotel.price).toFixed(2)} / PER NIGHT</h5>
                             </div>
@@ -236,6 +249,8 @@ function HotelDetails() {
                             <button className="btn btn-outline-success" style={{ width: "100%" }} onClick={handleButtonClick}>
                                 BOOK
                             </button>
+
+                            {errors.nrDays && <div className="p-3 bg-danger">{errors.nrDays}</div>}
                         </div>
                     </div>
                 </div>

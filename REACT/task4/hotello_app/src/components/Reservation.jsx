@@ -149,7 +149,6 @@ function Reservation() {
           <div className="col-8">
             <form onSubmit={handleOnSubmit} className='needs-validation' novalidate action="https://formspree.io/f/f/xknarjyv">
               <div class="row personal-details g-3 mb-3">
-
                 <div class="col">
                   <input
                     type="text"

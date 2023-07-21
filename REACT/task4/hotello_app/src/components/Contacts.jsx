@@ -9,6 +9,7 @@ function Contacts() {
     return <p>Message sent Succesfully!</p>;
 }
   return (
+
     <div>
       <Navbar />
       <div class="banner">
@@ -16,7 +17,7 @@ function Contacts() {
           <h1 className='text-light'>Get in touch</h1>
         </div>
       </div>
-
+      
       <section class="container py-5">
         <p>Waters midst. Creature man female. Them You’re female there his for first were have whose and blessed darkness his man Darkness had you’re hath fill were. Gathering may living moveth had evening called behold. Blessed darkness subdue he open she’d of void sea one let after light thing have creeping living the brought</p>
         <div class="row">
