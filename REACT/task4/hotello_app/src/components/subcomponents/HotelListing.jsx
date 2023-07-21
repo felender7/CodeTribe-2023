@@ -5,6 +5,7 @@ import { db } from "../../config/firebase"
 
 function HotelListing() {
   const [hotels, setHotels] = useState([]);
+ 
 
   //trancate function
   function truncateText(text, maxLength) {
