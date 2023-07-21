@@ -198,11 +198,11 @@ function HotelDetails() {
                         </table>
                     </div>
                     <div className="col">
-                        <div className='p-5 bg-light shadow-sm'>
+                        <div className='p-5 bg-dark shadow-sm text-light'>
 
                             <div className="row mb-3" >
-                                <div className='col-md-6'>
-                                    <label htmlFor="check-in"> <i class="bi bi-calendar-check"></i> Check-In</label>
+                                <div className='col-md-6 '>
+                                    <label htmlFor="check-in" className='mb-3'> <i class="bi bi-calendar-check"></i> CHECK-IN</label>
                                     <DatePicker
                                         selected={checkIndDate}
                                         onChange={handleDateChangeCheckIn}
@@ -212,7 +212,7 @@ function HotelDetails() {
                                         value={checkIndDate && checkIndDate.toLocaleDateString()}
                                     /></div>
                                 <div className='col-md-6'>
-                                    <label htmlFor="check-out"> <i class="bi bi-calendar-x"></i> Check-Out</label>
+                                    <label htmlFor="check-out" className='mb-3'> <i class="bi bi-calendar-x"></i> CHECK-OUT</label>
                                     <DatePicker
                                         selected={checkOutdDate}
                                         onChange={handleDateChangeCheckOut}
