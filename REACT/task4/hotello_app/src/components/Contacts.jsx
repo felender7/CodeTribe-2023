@@ -1,8 +1,13 @@
 import React from 'react'
 import Navbar from './subcomponents/Navbar'
 import Footer from './subcomponents/Footer'
+import { useForm, ValidationError } from '@formspree/react';
 
 function Contacts() {
+  const [state, handleSubmit] = useForm("xknarjyv");
+  if (state.succeeded) {
+    return <p>Message sent Succesfully!</p>;
+}
   return (
     <div>
       <Navbar />
@@ -17,15 +22,20 @@ function Contacts() {
         <div class="row">
           <div class="col-lg-6 mt-5">
 
-            <form action="https://formspree.io/f/xzblbkll" method="post">
+            <form onSubmit={handleSubmit} method="post">
               <div class="mb-3">
-                <input type="text" class="form-control" id="name" placeholder="Name" required />
+                <input type="text" class="form-control" id="name" name='name' placeholder="Name" required />
+              </div>
+                      <ValidationError 
+                prefix="name" 
+                field="name"
+                errors={state.errors}
+              />
+              <div class="mb-3">
+                <input type="email" class="form-control" id="email" name='email' placeholder='Email' required />
               </div>
               <div class="mb-3">
-                <input type="email" class="form-control" id="email" placeholder='Email' required />
-              </div>
-              <div class="mb-3">
-                <textarea class="form-control" id="message" rows="5" required placeholder='Message'></textarea>
+                <textarea class="form-control" id="message" rows="5"  name="message" required placeholder='Message'></textarea>
               </div>
               <button type="submit" class="btn btn-outline-success">Submit</button>
             </form>
@@ -45,5 +55,4 @@ function Contacts() {
     </div>
   )
 }
-
 export default Contacts

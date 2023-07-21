@@ -7,8 +7,8 @@ function CTA() {
       <div class="overlay">
         <div class="overlay-content">
             <h1>Plan Your Next Getaway</h1>
-            <p>Book your perfect stay at our luxurious hotel now!.</p>
-            <Link className="btn btn-outline-success btn-lg"  to="/rooms">Book Now</Link>
+            <p className='mb-5'>Book your perfect stay at our luxurious hotel now!.</p>
+            <Link className=" custom-btn-home "  to="/rooms">Book Now</Link>
         </div>
     </div>
     </div>

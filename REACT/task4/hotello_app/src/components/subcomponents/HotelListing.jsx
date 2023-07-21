@@ -6,6 +6,19 @@ import { db } from "../../config/firebase"
 function HotelListing() {
   const [hotels, setHotels] = useState([]);
 
+  //trancate function
+  function truncateText(text, maxLength) {
+    if (!text || typeof text !== 'string') {
+      return '';
+    }
+
+    if (text.length <= maxLength) {
+      return text;
+    }
+
+    return text.substring(0, maxLength) + '...';
+  }
+  //Get data from fire store
   useEffect(() => {
 
     const fetchHotels = async () => {
@@ -29,23 +42,8 @@ function HotelListing() {
     fetchHotels();
   }, []);
 
-
-
-  function truncateText(text, maxLength) {
-    if (!text || typeof text !== 'string') {
-      return ''; // Return an empty string or handle the case when the text is undefined or not a string
-    }
-
-    if (text.length <= maxLength) {
-      return text;
-    }
-
-    return text.substring(0, maxLength) + '...';
-  }
-
   return (
     <div>
-     
       <div className="container mt-6" style={{ marginBottom: "200px" }}>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
           {hotels.map((hotel) => (

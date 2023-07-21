@@ -1,6 +1,6 @@
 body {
   background-color: whitesmoke;
-  font-family: 'Raleway';
+  font-family: "Raleway";
 }
 
 .btn-outline-success {
@@ -28,7 +28,7 @@ body {
 }
 
 .bg-image {
-  background-image: url('./assets/slider1.jpg');
+  background-image: url("./assets/slider1.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -83,26 +83,27 @@ select {
 .single-room__sidebar {
   order: 2;
   width: 32%;
-  padding: 0 15px
+  padding: 0 15px;
 }
 
-.price-pernight{
+.price-pernight {
   border: #c19b76 1px solid;
-  padding:5px
+  padding: 5px;
 }
 
-.hotel-extras{
+.hotel-extras {
   display: flex;
   flex-direction: row;
   align-content: center;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
+
 .reservation-td-r {
   background-color: transparent !important;
 }
 
-.reservation-td-l{
+.reservation-td-l {
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -110,14 +111,16 @@ select {
   background-color: transparent !important;
 }
 
-.text-mute{
+.text-mute {
   color: #cacacabf !important;
 }
-.personal-details .form-control  {
+
+.personal-details .form-control {
   height: 50px !important;
 }
 
 .custom-btn {
+  text-decoration: none;
   background-color: #c19b76;
   border: none;
   color: white;
@@ -133,5 +136,25 @@ select {
 }
 
 .custom-btn:active {
+  transform: scale(0.95);
+}
+
+.custom-btn-home {
+  text-decoration: none;
+  background-color: #c19b76;
+  border: none;
+  color: white;
+  padding: 17px 28px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.custom-btn-home:hover {
+  background-color: #a17d50;
+}
+
+.custom-btn-home:active {
   transform: scale(0.95);
 }

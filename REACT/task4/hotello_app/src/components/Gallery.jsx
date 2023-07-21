@@ -14,7 +14,8 @@ function Gallery({ gallery }) {
         </div>
         
       </div>
-      <h2 className='text-center mt-3 ' style={{color:"#e8d0b8"  }}>"Discover the Captivating World of Hotel Images"</h2>
+      <div className='p-3 bg-light shadow-sm mb-3'><h4 className='text-center mt-3 ' style={{fontStyle:"italic" }}>"Discover the Captivating World of Hotel Images"</h4></div>
+      
       <div className="container">
         {gallery && gallery.length > 0 ? (
           <div className="row">

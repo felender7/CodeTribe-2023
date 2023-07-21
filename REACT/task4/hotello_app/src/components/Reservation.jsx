@@ -4,6 +4,7 @@ import { db } from "../config/firebase";
 import { useLocation } from 'react-router-dom';
 import Navbar from './subcomponents/Navbar';
 import Footer from './subcomponents/Footer';
+import CustomAlert from './subcomponents/CustomAlert';
 
 function Reservation() {
   // Get the query parameter value from the location object
@@ -22,12 +23,15 @@ function Reservation() {
   const [phone, setPhone] = useState('')
   const [arrivalTime, setArrivalTime] = useState('')
   const [specailRequest, setSpecailRequest] = useState('')
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertType, setAlertType] = useState('');
+  const [alertMessage, setAlertMessage] = useState('');
 
 
   useEffect(() => {
     setVat(parseFloat(totalPrice) * parseFloat(0.15, 10))
     setGrandTotal(parseInt(totalPrice) + parseInt(Vat))
-  
+
   })
 
   const handleCheckboxChange = () => {
@@ -45,16 +49,16 @@ function Reservation() {
         phone,
         arrivalTime,
         specailRequest,
-        GrandTotal : parseFloat(GrandTotal),
+        GrandTotal: parseFloat(GrandTotal),
         nrDays,
         hoteName,
         checkOutDate,
         checkInDate
       }
 
-      // Save the hotel data to Firestore
+      // Save the reservation  data to Firestore
       const docRef = await addDoc(collection(db, "reservation"), ReservationData);
-
+      console.log("Document written with ID: ", docRef.id);
       // Clear form fields
       setName("");
       setSurname("");
@@ -63,11 +67,18 @@ function Reservation() {
       setArrivalTime("");
       setSpecailRequest("");
 
-      alert("Thank you. Your reservation has been received! Please, check your email for the reservation information.");
+      //Custom Alerts(note I must note forget to add other componets)
+      setAlertType('success');
+      setAlertMessage('Thank you. Your reservation has been received! Please, check your email for the reservation information');
+      setShowAlert(true);
+      console.log(showAlert)
+
     } catch (error) {
       console.error("Error adding document: ", error);
       alert("An error occurred while saving hotel details. Please try again later.");
+
     }
+
   };
 
 
@@ -136,8 +147,7 @@ function Reservation() {
           </div>
 
           <div className="col-8">
-
-            <form onSubmit={handleOnSubmit} className='needs-validation' novalidate>
+            <form onSubmit={handleOnSubmit} className='needs-validation' novalidate action="https://formspree.io/f/f/xknarjyv">
               <div class="row personal-details g-3 mb-3">
 
                 <div class="col">
@@ -160,7 +170,7 @@ function Reservation() {
                     placeholder="LAST NAME"
                     aria-label="LAST NAME"
                     required
-                    onChange={(e)=> setSurname(e.target.value)}
+                    onChange={(e) => setSurname(e.target.value)}
                   />
                   <div class="invalid-feedback">Please enter your last name.</div>
                 </div>
@@ -173,9 +183,8 @@ function Reservation() {
                     className="form-control"
                     placeholder="EMAIL ADDRESS"
                     aria-label="EMAIL ADDRESS"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                     required
-                    onChange={(e) => setEmail(e.target.value) }
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                   <div class="invalid-feedback">Please enter a valid email address.</div>
                 </div>
@@ -188,7 +197,7 @@ function Reservation() {
                     pattern="[0-9]{10}"
                     required
                     maxLength={10}
-                    onChange={(e)=> setPhone(e.target.value)}
+                    onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
                 <div class="invalid-feedback">Please enter a valid telephone number.</div>
@@ -229,7 +238,7 @@ function Reservation() {
                 <option value="23:00 - 00:00">23:00 - 00:00</option>
               </select>
 
-              <textarea rows="4" cols="5" className='form-control mt-1' placeholder='SPECIAL REQUESTS' onChange={(e)=>setSpecailRequest(e.target.value)}></textarea>
+              <textarea rows="4" cols="5" className='form-control mt-1' placeholder='SPECIAL REQUESTS' onChange={(e) => setSpecailRequest(e.target.value)}></textarea>
               <span className='text-muted' style={{ fontStyle: "italic" }}>Special requests cannot be guaranteed but we will do our best to meet your needs.</span>
 
               <table class="table mt-5">
@@ -306,8 +315,11 @@ function Reservation() {
                 Submit
               </button>
             </form>
+            {showAlert && (
+              <CustomAlert type={alertType} message={alertMessage} onClose={() => setShowAlert(false)} />
+            )}
           </div>
-          <div id="success" className='p-5 bg-green'></div>
+
         </div>
       </div>
       <Footer />

@@ -15,7 +15,7 @@ function Login() {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         navigate("/dashboard");
-        // window.location="/dashboard"
+       
       })
       .catch((error) => {
         console.log(error.message);

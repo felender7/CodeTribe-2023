@@ -54,7 +54,7 @@ function Navbar() {
           </ul>
 
           <div className="d-flex">
-          <Link to="#" className="btn btn-outline-success" >BOOK NOW</Link>
+          <Link to="/rooms" className="btn btn-outline-success" >BOOK NOW</Link>
           </div>
         </div>
       </div>
