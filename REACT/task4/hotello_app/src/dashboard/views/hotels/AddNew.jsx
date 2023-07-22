@@ -5,6 +5,7 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import Header from '../components/dashboardNav'
 import Footer from '../components/dashboardFooter'
 import { Room1 } from "../../../components/Imports";
+import CustomAlert from "../../../components/subcomponents/CustomAlert";
 
 function AddHotelForm() {
   const [name, setName] = useState("");
@@ -12,7 +13,12 @@ function AddHotelForm() {
   const [guest, setGuest] = useState("");
   const [children, setChildren] = useState("");
   const [price, setPrice] = useState("");
+  const [roomType, setRoomType] = useState("");
+  const [roomSize,  setRoomSize] = useState("")
   const [image, setImage] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertType, setAlertType] = useState('');
+  const [alertMessage, setAlertMessage] = useState('');
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -39,6 +45,8 @@ function AddHotelForm() {
         guest,
         children,
         price: parseFloat(price),
+        roomType,
+        roomSize,
         imageUrl: downloadURL, // Add the image URL to the hotel data
       };
 
@@ -51,11 +59,21 @@ function AddHotelForm() {
       setGuest("");
       setChildren("");
       setPrice("");
+      setRoomSize("");
+      setRoomType("");
       setImage(null);
-      alert("Hotel details saved successfully!");
+      
+      setAlertType('success');
+      setAlertMessage('Details Successfully Saved!');
+      setShowAlert(true);
+      setTimeout(()=>setShowAlert(false), 10000);
+
     } catch (error) {
       console.error("Error adding document: ", error);
-      alert("An error occurred while saving hotel details. Please try again later.");
+      setAlertType('danger');
+      setAlertMessage('An error occurred while saving hotel details. Please try again later');
+      setShowAlert(true);
+      setTimeout(()=>setShowAlert(false), 10000);
     }
   };
 
@@ -64,19 +82,28 @@ function AddHotelForm() {
       <Header />
       <div className="container mt-5">
       <div className="row">
-        
           <div className="col-md-8 p-3 bg-light shadow-sm mb-5 ">
-
             <div>
               <h3>Add Hotel</h3>
               <form>
                 <div className="mb-3">
                   <input
                     type="text"
-                    className="form-control" placeholder="Hotel Name"
+                    className="form-control" placeholder="Name"
                     id="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    className="form-control" placeholder="Size"
+                    id="size"
+                    value={roomSize}
+                    onChange={(e) => setRoomSize(e.target.value)}
                     required
                   />
                 </div>
@@ -89,6 +116,22 @@ function AddHotelForm() {
                     onChange={(e) => setDescription(e.target.value)}
                     required
                   ></textarea>
+                </div>
+
+                <div className="mb-3">
+                  <select
+                    aria-label="room type"
+                    className="form-select"
+                    id="room-type"
+                    value={roomType}
+                    onChange={(e) => setRoomType(e.target.value)}
+                    required
+                  >
+                    <option disabled selected>Room Type</option>
+                    <option value="Studio">Studio</option>
+                    <option value="Standart">Standart</option>
+                    <option value="Delux">Delux</option>
+                  </select>
                 </div>
                 <div className="mb-3">
                   <select
@@ -144,6 +187,9 @@ function AddHotelForm() {
                   required
                 />
                 <br />
+                {showAlert && (
+              <CustomAlert type={alertType} message={alertMessage} onClose={() => setShowAlert(false)} />
+               )}
                 <button type="submit" className="btn btn-outline-success mt-3" onClick={handleSubmit}>
                   Save
                 </button>

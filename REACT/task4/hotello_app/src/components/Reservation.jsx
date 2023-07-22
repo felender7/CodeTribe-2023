@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import Navbar from './subcomponents/Navbar';
 import Footer from './subcomponents/Footer';
 import CustomAlert from './subcomponents/CustomAlert';
+import CustomAlertValidation from './subcomponents/CustomAlertValidation';
 
 function Reservation() {
   // Get the query parameter value from the location object
@@ -28,6 +29,7 @@ function Reservation() {
   const [alertMessage, setAlertMessage] = useState('');
 
 
+
   useEffect(() => {
     setVat(parseFloat(totalPrice) * parseFloat(0.15, 10))
     setGrandTotal(parseInt(totalPrice) + parseInt(Vat))
@@ -39,7 +41,7 @@ function Reservation() {
   };
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-
+    
     try {
 
       const ReservationData = {
@@ -78,9 +80,7 @@ function Reservation() {
       alert("An error occurred while saving hotel details. Please try again later.");
 
     }
-
   };
-
 
   return (
     <div>
@@ -104,6 +104,7 @@ function Reservation() {
                     value={checkInDate}
                     className="form-control mb-3 mt-1"
                     required
+                    name="check-in-date"
                   />
                 </div>
                 <div className="col-md-6">
@@ -113,11 +114,12 @@ function Reservation() {
                     value={checkOutDate}
                     className="form-control mb-3 mt-1"
                     required
+                    name="check-out-date"
                   />
                 </div>
               </div>
               <h4 className="mt-3">{hoteName}</h4>
-              <input type="text" value={hoteName} hidden="true" required />
+              <input type="text" value={hoteName} hidden="true" required name="hotel-name" />
               <table width="100%" className="table">
                 <tbody>
                   <tr>
@@ -126,7 +128,7 @@ function Reservation() {
                       <label htmlFor="">
                         <strong>{nrDays}</strong>
                       </label>
-                      <input type="text" value={nrDays} hidden required />
+                      <input type="text" value={nrDays} hidden required name="number-of-days" />
                     </td>
                   </tr>
                   <tr>
@@ -135,7 +137,7 @@ function Reservation() {
                       <label htmlFor="">
                         <strong>R {totalPrice}</strong>
                       </label>
-                      <input type="text" value={totalPrice} hidden />
+                      <input type="text" value={totalPrice} hidden name="total-price" />
                     </td>
                   </tr>
                 </tbody>
@@ -145,9 +147,10 @@ function Reservation() {
               </a>
             </div>
           </div>
-
+         
           <div className="col-8">
-            <form onSubmit={handleOnSubmit} className='needs-validation' novalidate action="https://formspree.io/f/f/xknarjyv">
+            <div className='p-3 bg-light shadow-sm'>
+            <form onSubmit={handleOnSubmit} className='needs-validation' novalidate>
               <div class="row personal-details g-3 mb-3">
                 <div class="col">
                   <input
@@ -169,6 +172,7 @@ function Reservation() {
                     placeholder="LAST NAME"
                     aria-label="LAST NAME"
                     required
+                    name="surname"
                     onChange={(e) => setSurname(e.target.value)}
                   />
                   <div class="invalid-feedback">Please enter your last name.</div>
@@ -183,6 +187,7 @@ function Reservation() {
                     placeholder="EMAIL ADDRESS"
                     aria-label="EMAIL ADDRESS"
                     required
+                    name='email'
                     onChange={(e) => setEmail(e.target.value)}
                   />
                   <div class="invalid-feedback">Please enter a valid email address.</div>
@@ -195,6 +200,7 @@ function Reservation() {
                     aria-label="TELEPHONE"
                     pattern="[0-9]{10}"
                     required
+                    name='phone'
                     maxLength={10}
                     onChange={(e) => setPhone(e.target.value)}
                   />
@@ -207,6 +213,7 @@ function Reservation() {
                 className="form-select mb-3 mt-3"
                 id="time-arrival"
                 required
+                name="arrival-time"
                 onChange={(e) => setArrivalTime(e.target.value)}
               >
                 <option disabled selected>TIME OF ARRIVAL</option>
@@ -291,8 +298,7 @@ function Reservation() {
                   </tr>
                 </tbody>
               </table>
-              <small>This reservation includes a non-cancellable and non-refundable room. You will be charged the total price if you cancel your booking.</small>
-
+              <small className='alert alert-warning'>Non-cancellable, non-refundable room reservation; cancellation charges total price. Enjoy your stay, thank you</small>
               <div className="form-check mt-5">
                 <input
                   type="checkbox"
@@ -306,10 +312,9 @@ function Reservation() {
                 </label>
               </div>
               <button
-                type="submit"
+                type="submit" style={{width:"100%"}}
                 className="btn btn-outline-success btn-lg mt-3"
                 disabled={!isChecked}
-
               >
                 Submit
               </button>
@@ -317,6 +322,7 @@ function Reservation() {
             {showAlert && (
               <CustomAlert type={alertType} message={alertMessage} onClose={() => setShowAlert(false)} />
             )}
+            </div>
           </div>
 
         </div>

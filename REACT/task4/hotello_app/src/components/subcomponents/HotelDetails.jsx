@@ -1,4 +1,4 @@
-import React, { useEffect, useState  } from 'react';
+import React, { useEffect, useState   } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
@@ -22,8 +22,10 @@ function HotelDetails() {
     const [showAlert, setShowAlert] = useState(false);
     const [alertType, setAlertType] = useState('');
     const [alertMessage, setAlertMessage] = useState('');
+  
 
-
+    console.log(checkIndDate)
+    console.log(checkOutdDate)
     //Passing data to reservation component
     const handleNrDaysChnge = (event) => {
         const days = event.target.value;
@@ -42,6 +44,7 @@ function HotelDetails() {
 
     const handleDateChangeCheckOut = (date) => {
         setCheckOutDate(date);
+        
     };
    
     // Function to handle button click and redirect to the next component
@@ -52,9 +55,9 @@ function HotelDetails() {
    const errors = {};
 
   if (nrDays.trim() === "" ){
-    errors.nrNights ="";
-    setAlertType('danger');
+    errors.nrNights = ""
     setAlertMessage('Number of nights required');
+    setAlertType('danger');
     setShowAlert(true);
   }
 
@@ -204,11 +207,11 @@ function HotelDetails() {
                                 </tr>
                                 <tr>
                                     <td>Room Size:</td>
-                                    <td><strong>{hotel.guest} m²</strong></td>
+                                    <td><strong>{hotel.roomSize} m²</strong></td>
                                 </tr>
                                 <tr >
                                     <td>RoomType:</td>
-                                    <td><strong>{hotel.name}</strong></td>
+                                    <td><strong>{hotel.roomType}</strong></td>
                                 </tr>
 
                             </tbody>
@@ -221,12 +224,17 @@ function HotelDetails() {
                                     <label htmlFor="check-in" className='mb-3'> <i class="bi bi-calendar-check"></i> CHECK-IN</label>
                                     <DatePicker
                                         selected={checkIndDate}
+                                        dateFormat="dd/MM/yyyy"
+                                        showTimeSelect={false}
+                                        showTimeSelectOnly={false}
+                                        showTimeInput={false}
                                         onChange={handleDateChangeCheckIn}
                                         className="form-control"
                                         placeholderText="Check In" name="check-in"
                                         style={{ borderRadius: "0px", with: "100%" }}
-                                        value={checkIndDate && checkIndDate.toLocaleDateString()}
+                                        value={checkIndDate && checkIndDate}
                                         required
+                                      
                                     />
                                      
                                     </div>
@@ -238,8 +246,12 @@ function HotelDetails() {
                                         className="form-control"
                                         placeholderText="Check out" name="check-out"
                                         style={{ borderRadius: "0px", with: "100%" }}
-                                        value={checkOutdDate && checkOutdDate.toLocaleDateString()}
+                                        value={checkOutdDate && checkOutdDate}
                                         required
+                                        dateFormat="dd/MM/yyyy"
+                                        showTimeSelect={false}
+                                        showTimeSelectOnly={false}
+                                        showTimeInput={false}
                                     />
                                 </div>
                             </div>

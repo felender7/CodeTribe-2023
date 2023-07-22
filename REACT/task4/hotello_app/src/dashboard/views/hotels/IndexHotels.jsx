@@ -18,6 +18,5 @@ function ListHotels({ hotels }) {
     </div>
   );
 }
-
 export default ListHotels;
 

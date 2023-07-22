@@ -1,0 +1,31 @@
+[debug] [2023-07-21T11:14:22.355Z] ----------------------------------------------------------------------
+[debug] [2023-07-21T11:14:22.358Z] Command:       C:\Users\85762776\node-v18.16.0-win-x64\node.exe C:\Users\85762776\node-v18.16.0-win-x64\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-07-21T11:14:22.358Z] CLI Version:   12.4.5
+[debug] [2023-07-21T11:14:22.358Z] Platform:      win32
+[debug] [2023-07-21T11:14:22.359Z] Node Version:  v18.16.0
+[debug] [2023-07-21T11:14:22.360Z] Time:          Fri Jul 21 2023 13:14:22 GMT+0200 (South Africa Standard Time)
+[debug] [2023-07-21T11:14:22.360Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-07-21T11:14:22.484Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-21T11:14:22.485Z] > authorizing via signed-in user (felender7@gmail.com)
+[debug] [2023-07-21T11:14:22.485Z] [iam] checking project hotel-app-e99ae for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-07-21T11:14:22.488Z] > refreshing access token with scopes: []
+[debug] [2023-07-21T11:14:22.490Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-07-21T11:14:22.490Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-07-21T11:14:43.874Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------579470487275521367570651","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: connect ETIMEDOUT 142.251.47.202:443
+[debug] [2023-07-21T11:14:43.875Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-07-21T11:14:43.876Z] > refreshing access token with scopes: []
+[debug] [2023-07-21T11:14:43.876Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-07-21T11:14:43.876Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-07-21T11:15:04.941Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------438622767874215497205302","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: connect ETIMEDOUT 142.251.47.202:443
+[debug] [2023-07-21T11:15:04.942Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2023-07-21T11:15:09.952Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\85762776\node-v18.16.0-win-x64\node_modules\firebase-tools\lib\utils.js:254:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.

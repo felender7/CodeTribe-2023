@@ -2,6 +2,8 @@ import React from "react";
 import { Logo } from "../Imports";
 import { Link } from "react-router-dom";
 
+
+
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg  bg-dark fixed"  data-bs-theme="dark">
@@ -54,8 +56,11 @@ function Navbar() {
           </ul>
 
           <div className="d-flex">
-          <Link to="/rooms" className="btn btn-outline-success" >BOOK NOW</Link>
-          </div>
+          <Link to="/rooms" className="btn btn-outline-success me-2" >BOOK NOW</Link>
+        </div>
+        <Link to="/login" className="btn btn-outline-light">
+              <i className="bi bi-person-lock me-1"></i>
+            </Link>
         </div>
       </div>
     </nav>

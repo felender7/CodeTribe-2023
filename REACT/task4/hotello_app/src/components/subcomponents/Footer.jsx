@@ -1,6 +1,6 @@
 import React from 'react'
 import { Logo } from '../Imports'
-
+import { Link } from 'react-router-dom'
 function Footer() {
   return (
     <div>
@@ -24,7 +24,8 @@ function Footer() {
                 <div className="col-md-3">
                     <div className="footer-newsletter">
                         <h5>Subscribe to Our Newsletter</h5>
-                        <input type="email" placeholder="Enter your email"/>
+                        <input type="email" placeholder="Enter your email" className='mb-1'/>
+                         <Link  to="#">Subscribe</Link>
                     </div>
                 </div>
             </div>

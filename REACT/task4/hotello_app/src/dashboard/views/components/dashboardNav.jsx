@@ -18,7 +18,6 @@ function dashboardNav() {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/add_hotel"><i className="bi bi-building-add"></i>Hotel</Link>
                             </li>
-
                             <li className="nav-item">
                                 <a className="nav-link" href="#"> <i className="bi bi-basket"></i> Reservation</a>
                             </li>
@@ -33,23 +32,18 @@ function dashboardNav() {
                     </div>
                 </div>
             </nav>
-
             <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <form className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div className="input-group">
-                            <input type="text" className="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"/>
-                            <div className="input-group-append">
-                                <button className="btn btn-primary" type="button">
-                                    <i className="fa fa-search fa-sm"></i>
-                                </button>
-                            </div>
+                <form className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div className=" container input-group">
+                        <input type="text" className="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+                        <div className="input-group-append">
+                            <button className="btn btn-primary" type="button">
+                                <i className="fa fa-search fa-sm"></i>
+                            </button>
                         </div>
-                    </form>
-
-        
-
-                </nav>
+                    </div>
+                </form>
+            </nav>
         </div>
     )
 }
