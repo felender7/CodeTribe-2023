@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React  from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./subcomponents/Navbar";
 import Footer from "./subcomponents/Footer";
@@ -32,8 +32,9 @@ function Home({hotels}) {
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
           {hotels.map((hotel) => (
             <div key={hotel.id} className="col">
-              <div className="card" style={{ height: "450px" }}>
+              <div className="card" style={{ height: "450px",  position: "relative" }}>
                 <img src={hotel.imageUrl} className="card-img-top" alt="Hotel Image" />
+                <div className="price-overlay">R{hotel.price} / Night</div>
                 <div className="card-body">
                   <h5 className="card-title">{hotel.name}</h5>
                   <small className='text-dark'> <i className="bi bi-people"></i> {hotel.guest} adult(s) and {hotel.children} child(ren)</small>

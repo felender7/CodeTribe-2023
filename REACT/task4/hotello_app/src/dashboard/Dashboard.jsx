@@ -11,7 +11,7 @@ function Dashboard({hotels}) {
       <Header />
       <main className="container mt-5">
         <div className="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
+          <h4 className="h3 mb-0 text-gray-800">Dashboard</h4>
           <a href="#" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i className="fa fa-download fa-sm text-white-50"></i> Generate Report</a>
         </div>
         <hr />
@@ -97,7 +97,7 @@ function Dashboard({hotels}) {
           </div>
         </div>
 
-        <h3 className='mt-5'>Hotels</h3>
+        <h4 className='mt-5'>Hotels</h4>
         <hr />
 
         <table className="table">

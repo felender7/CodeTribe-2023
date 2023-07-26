@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { collection, addDoc, getDocs } from "firebase/firestore";
-import { db, storage } from "../../../config/firebase";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../../config/firebase";
 import Header from '../components/dashboardNav'
 import Footer from '../components/dashboardFooter'
 import ListImages from '../gallery/ListImages'

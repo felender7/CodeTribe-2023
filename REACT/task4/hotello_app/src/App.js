@@ -21,6 +21,7 @@ import CustomAlert from "./components/subcomponents/CustomAlert";
 import EditHotel from "./dashboard/views/hotels/EditHotel";
 
 
+
 import "./App.css";
 function App() {
   const [hotels, setHotels] = useState([]);
@@ -32,11 +33,11 @@ function App() {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        // Retrieve the collection "hotels" from Firestore with a limit of 4 documents
+        // Retrieve the collection "hotels" from Firestore with a limit of 4 documents for home page
         const q = query(collection(db, "hotels"), limit(4));
         const querySnapshot = await getDocs(q);
 
-        // Retrieve the collection "gallery" from Firestore with a limit of 10 documents
+        // Retrieve the collection "gallery" from Firestore with a limit of 10 documents // I will pigination 
         const qGallery = query(collection(db, "gallery"), limit(10));
         const querySnapshot_gallery = await getDocs(qGallery);
 

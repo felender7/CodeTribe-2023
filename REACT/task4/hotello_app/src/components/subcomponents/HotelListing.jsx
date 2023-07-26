@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../config/firebase"
 
-function HotelListing() {
+function HotelListing({selectedRoomType }) {
   const [hotels, setHotels] = useState([]);
  
+  //Select RoomType 
+  const filteredHotels = selectedRoomType
+  ? hotels.filter((hotel) => hotel.roomType === selectedRoomType)
+  : hotels;
 
   //trancate function
   function truncateText(text, maxLength) {
@@ -47,7 +51,7 @@ function HotelListing() {
     <div>
       <div className="container mt-6" style={{ marginBottom: "200px" }}>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-          {hotels.map((hotel) => (
+          {filteredHotels.map((hotel) => (
             <div key={hotel.id} className="col">
               <div className="card" style={{ height: "450px" }}>
                 <img src={hotel.imageUrl} className="card-img-top" alt="Hotel Image" />

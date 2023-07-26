@@ -1,26 +1,10 @@
-import React,{useState} from "react";
+import React from "react";
 import { Slider1,Slider2, Slider3 } from "../Imports";
-import { Link, useNavigate  } from "react-router-dom";
+import { Link} from "react-router-dom";
 import "./carousel.css";
 
 
 function Banner({hotels}) {
- 
-const navigate = useNavigate()
-const [checkInDate, setCheckInDate] = useState(null);
-const [guests, setGuests] = useState("Guests");
-const [children, setChildren] = useState("Children");
-const [filteredHotels, setFilteredHotels] = useState([]);
-
-
-//handle search filter
-const handleSearch = () => {
-  const filtered = hotels.filter((hotel) => {
-    return true; 
-  });
-  setFilteredHotels(filtered);
-  navigate("/rooms", { state: { hotels: filtered } });
-};
 
   return (
       <div>
@@ -125,8 +109,8 @@ const handleSearch = () => {
         </div>
         <br />
         <div className="search-rates mt-6 text-dark">
-           <input type="text" name="pick date" id="pickDate" onChange={(e)=>setCheckInDate(e.target.value)}  className="datepicker" placeholder="Pick Date" style={{borderRadius:"0px"}} />
-          <select aria-label="Default select example" onChange={(e) =>setGuests(e.target.value) }>
+           <input type="text" name="pick date" id="pickDate"   className="datepicker" placeholder="Pick Date" style={{borderRadius:"0px"}} />
+          <select aria-label="Default select example" >
             <option selected>Guests</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -135,7 +119,7 @@ const handleSearch = () => {
             <option value="3">5</option>
           </select>
 
-          <select aria-label="Default select example" onChange={(e)=> setChildren(e.target.value)}>
+          <select aria-label="Default select example" >
             <option selected>Children</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -144,7 +128,7 @@ const handleSearch = () => {
             <option value="3">5</option>
           </select>
 
-          <a className="btn-rates"  onClick={handleSearch}>
+          <a className="btn-rates" >
                       CHECK RATES
                     </a>
 
