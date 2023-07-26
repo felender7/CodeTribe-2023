@@ -28,6 +28,18 @@ function Reservation() {
   const [alertType, setAlertType] = useState('');
   const [alertMessage, setAlertMessage] = useState('');
 
+  //format date 
+
+  var updateCheckIn = checkInDate; 
+  var updateCheckOut = checkOutDate;
+
+  // Convert the string to a Date object
+  var dateNewCheckIn = new Date(updateCheckIn);
+  var dateNewCheckOut = new Date(updateCheckOut);
+
+  updateCheckIn = dateNewCheckIn.toISOString().split("T")[0];
+  updateCheckOut = dateNewCheckOut.toISOString().split("T")[0];
+
 
 
   useEffect(() => {
@@ -54,8 +66,8 @@ function Reservation() {
         GrandTotal: parseFloat(GrandTotal),
         nrDays,
         hoteName,
-        checkOutDate,
-        checkInDate
+        updateCheckIn,
+        updateCheckOut,
       }
 
       // Save the reservation  data to Firestore
@@ -73,8 +85,8 @@ function Reservation() {
       setAlertType('success');
       setAlertMessage('Thank you. Your reservation has been received! Please, check your email for the reservation information');
       setShowAlert(true);
-      console.log(showAlert)
-
+      setTimeout(() => {setShowAlert(false)},2000);
+      
     } catch (error) {
       console.error("Error adding document: ", error);
       alert("An error occurred while saving hotel details. Please try again later.");
@@ -101,7 +113,7 @@ function Reservation() {
                   <label htmlFor="">check-In</label>
                   <input
                     type="text"
-                    value={checkInDate}
+                    value={updateCheckIn}
                     className="form-control mb-3 mt-1"
                     required
                     name="check-in-date"
@@ -111,7 +123,7 @@ function Reservation() {
                   <label htmlFor="">Check-Out</label>
                   <input
                     type="text"
-                    value={checkOutDate}
+                    value={updateCheckOut}
                     className="form-control mb-3 mt-1"
                     required
                     name="check-out-date"
@@ -252,12 +264,12 @@ function Reservation() {
                 <tbody>
                   <tr>
                     <td class="text-start">Check-In:</td>
-                    <td class="text-end"><strong>{checkInDate}</strong></td>
+                    <td class="text-end"><strong>{updateCheckIn}</strong></td>
                   </tr>
 
                   <tr>
                     <td class="text-start">Check-Out:</td>
-                    <td class="text-end"><strong>{checkOutDate}</strong></td>
+                    <td class="text-end"><strong>{updateCheckOut}</strong></td>
                   </tr>
                   <tr>
                     <td class="text-start">Pets:</td>

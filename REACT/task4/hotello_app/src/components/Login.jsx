@@ -28,7 +28,8 @@ function Login() {
       <div className="d-flex justify-content-center align-items-center vh-100 bg-image">
         <div className="card" style={{ width: "600px" }}>
           <div className="card-body">
-            <h5 className="card-title">Login</h5>
+            <h5 className="card-title md-5 text-center">LOGIN</h5>
+            <hr />
             <form id="loginForm" noValidate>
               <div className="mb-3">
                 <label htmlFor="inputEmail" className="form-label">
@@ -65,10 +66,9 @@ function Login() {
                 className="btn btn-outline-success"
                 onClick={GoToDashBoardPage}
               >
-                Login
+                Sign In
               </button>
-              <div className="text-center"><Link to="#">Forgot Password?</Link> <br />
-             <Link to="/sign_up">Create an Account!</Link></div>
+              <div className="text-center"><Link to="#">Forgot Password?</Link></div>
              
             </form>
           </div>

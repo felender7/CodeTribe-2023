@@ -1,6 +1,7 @@
 body {
   background-color: whitesmoke;
-  font-family: "Raleway";
+  font-family: 'Herr Von Muellerhoff', cursive;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .btn-outline-success {
@@ -158,4 +159,7 @@ select {
 .custom-btn-home:active {
   transform: scale(0.95);
 }
-
+.flex-d{
+  display: flex;
+  flex-direction: row;
+}

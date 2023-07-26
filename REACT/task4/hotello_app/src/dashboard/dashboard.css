@@ -212,3 +212,15 @@ border-radius: 0.35rem !important;
 .text-gray-300 {
   color: #dddfeb!important;
 }
+
+.flex-d-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.header-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

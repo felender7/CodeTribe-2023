@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { collection, getDocs, query, limit } from "firebase/firestore";
+import { collection, getDocs, query, limit,deleteDoc,doc } from "firebase/firestore";
 import { db } from "./config/firebase";
-
 import Home from "./components/Home";
 import Rooms from "./components/Rooms";
 import Gallery from "./components/Gallery";
@@ -54,6 +53,27 @@ function App() {
     fetchHotels();
   }, []);
 
+  const handleEditHotel = (hotelId, updatedHotelData) => {
+    // Find the hotel in the list and update its data
+    const updatedHotels = hotels.map((hotel) =>
+      hotel.id === hotelId ? { ...hotel, ...updatedHotelData } : hotel
+    );
+    setHotels(updatedHotels);
+  };
+
+  const handleDeleteHotel = async (hotelId) => {
+    try {
+      // Delete the hotel from Firestore using the hotelId
+      await deleteDoc(doc(db, "hotels", hotelId));
+
+      // Update the hotels state by filtering out the deleted hotel
+      const updatedHotels = hotels.filter((hotel) => hotel.id !== hotelId);
+      setHotels(updatedHotels);
+    } catch (error) {
+      console.error("Error deleting hotel: ", error);
+    }
+  };
+
   return (
     <div>
       <Routes>
@@ -66,10 +86,10 @@ function App() {
         <Route path="*" element={<PageError />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/sign_up" element={<SignUp />} />
-        <Route path="/add_hotel" element={<AddHotel />} />
+        <Route path="/add_room" element={<AddHotel />} />
         <Route path="/show_hotel" element={<ShowHotel />} />
         <Route path="/add_gallery" element={<AddGalleriImages />} />
-        <Route path="/list_hotels" element={<ListHotels hotels={hotels} />} />
+        <Route path="/list_hotels" element={<ListHotels hotels={hotels} onEditHotel={handleEditHotel} onDeleteHotel={handleDeleteHotel} />} />
         <Route
           path="/show_hotel_details/:id"
           element={<ShowHotelDetails hotels={hotels} />}

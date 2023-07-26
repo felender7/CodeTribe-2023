@@ -6,6 +6,7 @@ import Header from '../components/dashboardNav'
 import Footer from '../components/dashboardFooter'
 import { Room1 } from "../../../components/Imports";
 import CustomAlert from "../../../components/subcomponents/CustomAlert";
+import { Link } from "react-router-dom";
 
 function AddHotelForm() {
   const [name, setName] = useState("");
@@ -84,7 +85,8 @@ function AddHotelForm() {
       <div className="row">
           <div className="col-md-8 p-3 bg-light shadow-sm mb-5 ">
             <div>
-              <h3>Add Hotel</h3>
+              <h4><i class="bi bi-building-add"></i> ADD ROOM </h4>
+                <hr />
               <form>
                 <div className="mb-3">
                   <input
@@ -190,7 +192,7 @@ function AddHotelForm() {
                 {showAlert && (
               <CustomAlert type={alertType} message={alertMessage} onClose={() => setShowAlert(false)} />
                )}
-                <button type="submit" className="btn btn-outline-success mt-3" onClick={handleSubmit}>
+                <button type="submit" className="btn btn-outline-success mt-3" onClick={handleSubmit} style={{width:"100%"}}>
                   Save
                 </button>
               </form>
@@ -198,8 +200,11 @@ function AddHotelForm() {
 
 
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 ">
+           <div className="p-3 bg-dark">
           <img src={Room1} alt="" className="img-fluid"  style={{width:"100%"}}/>
+          <Link to="/list_hotels" className="btn btn-danger mt-3" style={{width:"100%"}}><i class="bi bi-view-stacked"></i> View All </Link>
+          </div>
           </div>
 
         </div>
