@@ -33,10 +33,10 @@ Welcome to Hotello App! This is a web application that allows users to browse an
 Visit the [Hotello App](https://hotel-app-e99ae.web.app/) website to start browsing and booking hotels!
 
 ## DashBoard Link
-Visit the [Hotello App](https://hotel-app-e99ae.web.app/dashboard) website to Manage bookings!
+Visit the [Hotello App](https://hotel-app-e99ae.web.app/login) website to Manage bookings!
 
 user Name: admin@hotello.co.za
-password : password@1
+password : Password@1!
 
 ## Screenshots
 

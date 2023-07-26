@@ -17,11 +17,11 @@ function Login() {
         const user = userCredential.user;
         const uid = user.uid;
 
-        if (uid === "VIpIpfo6vtS8jDDSGG9frvtHEJ62") {
+        if (uid === "VIpIpfo6vtS8jDDSGG9frvtHEJ62" || uid === "CO71Tobh4bV3fpPMPcy6zlhVCV42") {
           navigate("/dashboard");
         } else {
           // Redirect to a different page for other users
-          navigate("/different-page");
+          navigate("/not-authorized");
         }
       })
       .catch((error) => {
