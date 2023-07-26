@@ -11,11 +11,18 @@ function Login() {
 
   function GoToDashBoardPage(e) {
     e.preventDefault();
-    
+
     signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        navigate("/dashboard");
-       
+      .then((userCredential) => {
+        const user = userCredential.user;
+        const uid = user.uid;
+
+        if (uid === "VIpIpfo6vtS8jDDSGG9frvtHEJ62") {
+          navigate("/dashboard");
+        } else {
+          // Redirect to a different page for other users
+          navigate("/different-page");
+        }
       })
       .catch((error) => {
         console.log(error.message);

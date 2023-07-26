@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import Navbar from './subcomponents/Navbar';
 import Footer from './subcomponents/Footer';
 import CustomAlert from './subcomponents/CustomAlert';
-import CustomAlertValidation from './subcomponents/CustomAlertValidation';
+
 
 function Reservation() {
   // Get the query parameter value from the location object
@@ -284,33 +284,34 @@ function Reservation() {
                   <tr>
                     <th>Room</th>
                     <th>Qty</th>
-                    <th>Cost</th>
+                    <th className='text-end'>Cost</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td className='text-start'><b>{hoteName}</b>-<small className='text-danger'>Non-refundable</small></td>
                     <td><b>1</b></td>
-                    <td><b>R {totalPrice}</b></td>
+                    <td className='text-end'><b>R {totalPrice}</b></td>
                   </tr>
                   <tr>
                     <td><small><b>subtotal:</b></small></td>
                     <td></td>
-                    <td><b>R {totalPrice}</b></td>
+                    <td className='text-end'><b>R {totalPrice}</b></td>
                   </tr>
                   <tr>
                     <td><b>Tax total:</b></td>
-                    <td></td>
-                    <td> <b>R {Vat}</b></td>
+                    <td></td> 
+                    <td className='text-end'> <b>R {Vat}</b></td>
                   </tr>
                   <tr>
                     <td><b>Total:</b></td>
                     <td></td>
-                    <td><b>R {GrandTotal}</b></td>
+                    <td className='text-end'><b>R {GrandTotal}</b></td>
                   </tr>
                 </tbody>
               </table>
-              <small className='alert alert-warning'>Non-cancellable, non-refundable room reservation; cancellation charges total price. Enjoy your stay, thank you</small>
+              <div className='alert alert-warning'> <small>Non-cancellable, non-refundable room reservation; cancellation charges total price. Enjoy your stay, thank you</small></div>
+             
               <div className="form-check mt-5">
                 <input
                   type="checkbox"

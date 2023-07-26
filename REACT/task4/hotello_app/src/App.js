@@ -17,11 +17,17 @@ import ListHotels from "./dashboard/views/hotels/IndexHotels";
 import AddGalleriImages from "./dashboard/views/gallery/AddNew";
 import ShowHotelDetails from "./components/ShowHotel";
 import Reservation from "./components/Reservation";
+import CustomAlert from "./components/subcomponents/CustomAlert";
+import EditHotel from "./dashboard/views/hotels/EditHotel";
+
 
 import "./App.css";
 function App() {
   const [hotels, setHotels] = useState([]);
   const [gallery, setGallery] = useState([]);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertType, setAlertType] = useState('');
+  const [alertMessage, setAlertMessage] = useState('');
 
   useEffect(() => {
     const fetchHotels = async () => {
@@ -53,14 +59,20 @@ function App() {
     fetchHotels();
   }, []);
 
+  //Update function
   const handleEditHotel = (hotelId, updatedHotelData) => {
     // Find the hotel in the list and update its data
     const updatedHotels = hotels.map((hotel) =>
       hotel.id === hotelId ? { ...hotel, ...updatedHotelData } : hotel
     );
     setHotels(updatedHotels);
+    setAlertMessage('Room successfully updated');
+    setAlertType('Success');
+    setShowAlert(true);
   };
 
+
+  //Delete function
   const handleDeleteHotel = async (hotelId) => {
     try {
       // Delete the hotel from Firestore using the hotelId
@@ -69,6 +81,11 @@ function App() {
       // Update the hotels state by filtering out the deleted hotel
       const updatedHotels = hotels.filter((hotel) => hotel.id !== hotelId);
       setHotels(updatedHotels);
+      setAlertMessage('Room successfully Deleted');
+      setAlertType('Success');
+      setShowAlert(true);
+
+
     } catch (error) {
       console.error("Error deleting hotel: ", error);
     }
@@ -76,6 +93,7 @@ function App() {
 
   return (
     <div>
+        {showAlert && (<CustomAlert type={alertType} message={alertMessage} onClose={() => setShowAlert(false)} /> )}
       <Routes>
         <Route path="/" element={<Home  hotels={hotels}/>} />
         <Route path="/rooms" element={<Rooms />} />
@@ -89,11 +107,18 @@ function App() {
         <Route path="/add_room" element={<AddHotel />} />
         <Route path="/show_hotel" element={<ShowHotel />} />
         <Route path="/add_gallery" element={<AddGalleriImages />} />
+      
         <Route path="/list_hotels" element={<ListHotels hotels={hotels} onEditHotel={handleEditHotel} onDeleteHotel={handleDeleteHotel} />} />
         <Route
           path="/show_hotel_details/:id"
           element={<ShowHotelDetails hotels={hotels} />}
         />
+
+      <Route
+            path="/edit_room/:id"
+            element={<EditHotel hotels={hotels} />}
+          />
+       
         <Route path="/reservation" element={<Reservation />} />
       </Routes>
     </div>

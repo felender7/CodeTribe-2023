@@ -76,7 +76,6 @@ function HotelDetails() {
     );
   }
 
-
 }
     useEffect(() => {
         // Fetch data

@@ -1,42 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../config/firebase"
-import { Link } from 'react-router-dom'
 import Header from './views/components/dashboardNav'
 import Footer from './views/components/dashboardFooter'
 import './dashboard.css';
 
-function Dashboard() {
-
-  function truncateText(text, maxLength) {
-    if (text.length <= maxLength) {
-      return text;
-    }
-
-    return text.slice(0, maxLength) + "...";
-  }
-
-  const [hotels, setHotels] = useState([]);
-  useEffect(() => {
-    const fetchHotels = async () => {
-      try {
-        // Retrieve the collection "hotels" from Firestore
-        const querySnapshot = await getDocs(collection(db, "hotels"));
-
-        // Map the query snapshot to an array of hotel data objects
-        const hotelsData = querySnapshot.docs.map((doc) => doc.data());
-        console.log(hotelsData)
+function Dashboard({hotels}) {
 
 
-        // Set the hotels state with the retrieved data
-        setHotels(hotelsData);
-      } catch (error) {
-        console.error("Error fetching hotels: ", error);
-      }
-    };
-
-    fetchHotels();
-  }, []);
   return (
     <div>
       <Header />

@@ -1,12 +1,31 @@
 import React from 'react'
 import { LogoWhite } from '../../../components/Imports'
-import { Link } from 'react-router-dom'
-function dashboardNav() {
+import { Link , useNavigate} from 'react-router-dom'
+import { signOut } from "firebase/auth";
+import { auth } from "../../../config/firebase";
+
+function DashboardNav() {
+    
+    const navigate = useNavigate();
+
+    const handleSignOut = () => {
+      signOut(auth)
+        .then(() => {
+          // Sign-out successful, you can redirect the user to the login page or other pages as needed.
+          navigate("/login");
+        })
+        .catch((error) => {
+          console.log(error.message);
+          alert("Error signing out. Please try again.");
+        });
+    };
+  
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/"><img src={LogoWhite} alt="logo" width="150" /></Link>
+                    <Link className="navbar-brand" to="/dashboard"><img src={LogoWhite} alt="logo" width="150" /></Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -26,7 +45,7 @@ function dashboardNav() {
                             </li>
 
                             <li className="nav-item">
-                                <a className="nav-link" href="#"> <i className="bi bi-gear"></i> Settings</a>
+                            <Link className="btn btn-outline-danger" onClick={handleSignOut}>Sign Out</Link>
                             </li>
                         </ul>
                     </div>
@@ -48,4 +67,4 @@ function dashboardNav() {
     )
 }
 
-export default dashboardNav
+export default DashboardNav
