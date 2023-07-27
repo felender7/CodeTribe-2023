@@ -7,7 +7,7 @@ Welcome to Hotello App! This is a web application that allows users to browse an
 ## Features
 
 - Browse a wide selection of hotels and suites.
-- View detailed information about each hotel, including images, amenities, and room types.
+- View detailed information about each hotel, including images and room types.
 - Filter hotels by room type to find the perfect accommodation for your needs.
 - Make reservations and receive confirmation details via email.
 - User-friendly interface for easy navigation.
@@ -18,6 +18,7 @@ Welcome to Hotello App! This is a web application that allows users to browse an
 - Firebase for authentication and database management.
 - React Router for handling client-side routing.
 - Bootstrap for responsive and visually appealing UI.
+
 
 
 ## Installation and Usage

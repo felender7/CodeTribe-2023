@@ -26,7 +26,6 @@ function Home({hotels}) {
       <Navbar />
       <Banner />
       <AboutSection />
-      
      {/*room will  render with limit of 4*/}
      <div className="container mt-6" style={{ marginBottom: "200px" }}>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
@@ -39,14 +38,13 @@ function Home({hotels}) {
                   <h5 className="card-title">{hotel.name}</h5>
                   <small className='text-dark'> <i className="bi bi-people"></i> {hotel.guest} adult(s) and {hotel.children} child(ren)</small>
                   <p className="card-text mt-3">{truncateText(hotel.description, 60)}</p><br />
-                  <Link to={`/show_hotel_details/${hotel.id}`} className="btn btn-outline-success btn-lg" href="#">Book now from R{hotel.price}</Link>
+                  <Link to={`/show_hotel_details/${hotel.id}`} className="btn btn-outline-success btn-lg">Book now from R{hotel.price}</Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
-
       <CTA />
       <Footer />
     </div>
