@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "../../../config/firebase";
 import { db, storage } from "../../../config/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import Header from '../components/dashboardNav'
@@ -52,8 +52,8 @@ function AddHotelForm() {
       };
 
       // Save the hotel data to Firestore
-      const docRef = await addDoc(collection(db, "hotels"), hotelData);
-      console.log("Document written with ID: ", docRef.id);
+      const hotelsCollectionRef = collection(db, "hotels"); // Create a reference to "hotels" collection
+      await addDoc(hotelsCollectionRef, hotelData); // Use 'addDoc' with the collection reference
       // Clear form fields
       setName("");
       setDescription("");

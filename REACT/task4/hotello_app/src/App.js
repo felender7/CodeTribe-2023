@@ -19,6 +19,7 @@ import ShowHotelDetails from "./components/ShowHotel";
 import Reservation from "./components/Reservation";
 import CustomAlert from "./components/subcomponents/CustomAlert";
 import EditHotel from "./dashboard/views/hotels/EditHotel";
+import ManageReservation from "./dashboard/views/reservations/ManageReservation";
 
 
 
@@ -120,8 +121,8 @@ function App() {
             element={<EditHotel hotels={hotels} />}
           />
        
-        <Route path="/reservation" element={<Reservation />} />
-      </Routes>
+        <Route path="/reservation" element={<Reservation />} /></Routes>
+        <Route path="/manage_reservation"  element={<ManageReservation />}/>
     </div>
   );
 }
